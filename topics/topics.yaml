@@ -1,0 +1,19 @@
+# 追踪主题清单
+# 每个主题对应 topics/<slug>.md。用 /track <主题> 拉取该方向新论文。
+# 这是示例，按你的研究兴趣增删。
+
+topics:
+  - slug: long-context
+    name: 长上下文 / 推理效率
+    keywords: [long context, KV cache, inference efficiency, speculative decoding]
+    cadence: weekly        # 期望追踪频率：weekly / monthly / adhoc
+
+  - slug: agents
+    name: LLM Agents
+    keywords: [LLM agent, tool use, multi-agent, agentic, planning]
+    cadence: weekly
+
+  - slug: rl-reasoning
+    name: 强化学习 / 推理
+    keywords: [RLHF, reasoning, RLVR, chain-of-thought, test-time compute]
+    cadence: weekly
