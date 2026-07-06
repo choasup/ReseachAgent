@@ -67,6 +67,16 @@ PixMo-Clocks 等（用 LLM+代码生成图表/文档/时钟图像与 QA）。
   MathVista(testmini)、CountBenchQA、Flickr Count；另加大规模人类偏好 Elo 评测。
   论文自注：同一基准因评测细节不同可差 ~10 个点，对比时优先引用原作者数字。
 
+## 训练样本真实格式（源自官方代码 allenai/molmo, olmo/data/data_formatter.py）
+- **问题端**：从 ~50 个模板随机抽，如 `Point to the {label} in the image.` / `Show me where the {label} are` /
+  `Locate every {label}.`；并配有 "No pointing" 反向模板教模型按需关闭指点。
+- **回答端**（坐标归一化到 0–100，保留 1 位小数，按 x 排序）：
+  - 单点：`<point x="63.5" y="44.2" alt="{label}">{label}</point>`
+  - 多点：`<points x1="24.1" y1="30.2" x2="63.5" y2="44.2" alt="...">...</points>`
+  - 计数（pointing 版 CoT）：`Counting the <points ...> shows a total of N.` —— 先指后数
+  - 无目标：`There are none.`
+- 训练时留出 pointing 评测集（hold_out_pointing_eval，即 HF 上的 pixmo-points-eval）。
+
 ## 我的评价
 - **亮点**：一篇论文同时立起三根柱子——数据方法论（口述采集）、差异化能力（pointing）、
   开放原则（不蒸馏+全公开）。72B 打平/超过闭源旗舰给了"人工数据路线"最强背书。
