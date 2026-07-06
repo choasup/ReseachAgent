@@ -1,0 +1,78 @@
+---
+title: "Molmo2: Open Weights and Data for Vision-Language Models with Video Understanding and Grounding"
+authors: "Christopher Clark et al."
+venue: "arXiv 2601.10611"
+published: "2026-01"
+archived: "2026-07-06"
+arxiv: "https://arxiv.org/abs/2601.10611"
+code: "https://allenai.org/molmo"
+topics: ["VLM / 多模态大模型", "视频理解", "开源模型"]
+tags: ["open-weights", "open-data", "video-grounding", "pointing", "video-understanding", "dataset"]
+rating: "⭐⭐⭐⭐⭐"
+---
+
+# Molmo2: Open Weights and Data for VLMs with Video Understanding and Grounding
+
+> ⚠️ **来源说明**：arXiv/AI2 官网/tech report PDF 均被本环境网络策略屏蔽，未读原文正文。
+> 以下基于 abstract + AI2 官方博客的搜索摘要 + 多个报道源（SiliconANGLE 等）交叉印证；
+> 具体数字标注了出处，架构细节以原文为准。
+
+## TL;DR
+1. AI2（Allen Institute for AI）的全开放（权重+数据+配方）VLM 系列第二代，把 Molmo 的
+   "pointing 接地"能力从单图扩展到**多图与视频**：视频问答、视频指点（video pointing）、目标跟踪。
+2. 核心贡献是 **9 个全新开放数据集**（7 视频 + 2 多图，共 900 万+ 多模态样本），
+   全部**不依赖闭源 VLM** 采集——延续"不蒸馏闭源模型"的路线。
+3. 8B 模型在开放权重+数据类中最强，**视频接地上甚至超过 Gemini 3 Pro**
+   （video pointing F1 38.4 vs 20.0；video tracking J&F 56.2 vs 41.1）。
+
+## 背景与问题
+- 最强多模态模型仍是闭源的；开源模型普遍靠蒸馏闭源 VLM 的合成数据"曲线救国"，
+  社区缺乏"从零构建高性能 VLM"的基础知识（一代 Molmo 提出的问题，本作延续）。
+- 视频理解+接地（grounding/pointing/tracking）上，开放模型与闭源差距尤其大。
+
+## 核心方法
+**数据（主要贡献）**：9 个新数据集，均由人工采集/标注，不用闭源 VLM：
+- 高细节**视频 caption** 预训练集（Molmo2-Cap）：人工口述旁白转写 + Molmo 帧级细节增强，
+  平均每段视频 900+ 词（远超常规视频 caption 数据）。
+- 自由形式**视频 QA** 微调集；复杂 query 的**目标跟踪**集；创新的**视频 pointing** 集；2 个多图数据集。
+
+**训练配方**：
+- 三阶段：① 图像 caption + 图像 pointing 预训练 → ② 图/视频/多图混合 SFT → ③ 短程长上下文训练。
+- 工程技巧：高效 packing + message-tree 编码；**视觉 token 用双向注意力** + 新的 token 加权策略
+  （消融称有提升，细节待读原文）。
+
+**模型家族**：Molmo2 8B / 4B（基座 Qwen 3）+ Molmo2-O 7B（基座 AI2 自家 Olmo，全栈开放）。
+
+## 主要结果
+| 任务 | Molmo2 | 对比 | 出处 |
+|---|---|---|---|
+| Video pointing (F1) | **38.4** | Gemini 3 Pro 20.0 | abstract/AI2 博客 |
+| Video tracking (J&F) | **56.2** | Gemini 3 Pro 41.1 | abstract/AI2 博客 |
+| Video counting (acc) | **35.5** | Qwen3-VL 29.6 | abstract |
+| 短视频/计数/caption | 开放权重+数据类中最佳 | 长视频"competitive" | abstract |
+
+## 局限与存疑
+- 长视频只是"competitive"而非领先——长时序仍是短板（原文如何分析未读到）。
+- 视频接地的惊艳数字集中在 pointing/tracking 这类**该系列自己定义并深耕的任务**上，
+  基准选择对其有利；通用视频 QA 上与顶级闭源的差距需看原文完整表格。
+- 与 Qwen3-VL 的对比口径（模型规模、评测设置）待核。
+
+## 我的评价
+- **亮点**：当前"真开源"（权重+数据+配方全开放）路线的标杆工作。最有价值的不是模型本身，
+  而是**"不蒸馏闭源模型也能做出 SOTA 级 VLM"的完整配方**——数据怎么采、三阶段怎么训、
+  packing/注意力怎么改，全部可复现。pointing/tracking 作为"可验证的接地"接口，对 agent、
+  机器人、视频编辑等下游都是实用能力。
+- **对你的价值**：①开源基座选型——做视频接地相关应用，Molmo2 8B 是目前开放类最强候选；
+  ②9 个数据集本身是稀缺资产（尤其 video pointing/tracking 标注）；③"人工口述 caption"
+  的数据采集方法论值得借鉴。
+- **值得深读**：是。优先看：双向视觉注意力 + token 加权的消融、长视频短板的分析、
+  数据集的规模/质量细节。
+
+## 关联（系列脉络）
+- **一代**：Molmo and PixMo (arXiv 2409.17146, 2024-09) — 单图时代的开放 VLM 标杆，
+  见 [笔记](2026-07-06-molmo-pixmo.md)。
+- **后续**：MolmoPoint (arXiv 2603.28069) — 用 grounding tokens 改进 VLM pointing（系列衍生，未深读）。
+- 对比阅读：Qwen3-VL（开放权重但数据不开放）、本库 CVPR 2026 VLM×推理清单中的
+  video grounding 工作（SARL-STG、TempR1）。
+
+**Sources**: [arXiv abs](https://arxiv.org/abs/2601.10611) · [AI2 博客](https://allenai.org/blog/molmo2) · [SiliconANGLE 报道](https://siliconangle.com/2025/12/16/allen-institute-ai-introduces-molmo-2-bringing-open-video-understanding-ai-systems/)
