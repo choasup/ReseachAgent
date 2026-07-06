@@ -66,6 +66,15 @@ rating: "⭐⭐⭐⭐⭐"
 - **接地是代差**：video counting 35.5 vs 29.6；video pointing/tracking Qwen3-VL 基本无对位能力。
 - 推理吞吐/延迟的直接对比未见公开数字（性能侧只有训练效率 message-tree 15× 可引）。
 
+### 速度相关硬参数（已核实 + 推算）
+- 视觉编码器：**SigLIP 2 So400m/14 384px**（~400M 参数，冻结）；connector 用多头注意力池化，
+  **图像 2×2、视频帧 3×3 池化**。
+- 推算 token 预算：384px/14 ≈ 27×27=729 patch → 视频 **~81 token/帧**（÷9）、图像 ~182 token/crop（÷4）。
+  每帧成本低且固定；对比 Qwen3-VL 原生动态分辨率（token 随输入分辨率浮动、可调 max_pixels）。
+- 部署：**vLLM 自 v0.15.0 官方支持 Molmo2**；社区有 NVFP4 量化版（需定制 vLLM build）。
+  Qwen 生态成熟度仍明显占优（各框架 day-0、量化格式全）。
+- 同规模（4B/8B）下 decode 速度由 LLM 主导，两家应相近；差异主要在 **prefill 的视觉 token 数**。
+
 ## 局限与存疑
 - 长视频只是"competitive"而非领先——长时序仍是短板（原文如何分析未读到）。
 - 视频接地的惊艳数字集中在 pointing/tracking 这类**该系列自己定义并深耕的任务**上，
