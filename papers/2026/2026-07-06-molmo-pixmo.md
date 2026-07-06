@@ -45,6 +45,14 @@ PixMo-Clocks 等（用 LLM+代码生成图表/文档/时钟图像与 QA）。
 两阶段：① PixMo-Cap 上做 caption 生成预训练（ViT 与 LLM 联合更新）→ ② 全部 PixMo 混合 SFT。
 无 RLHF（依据摘要级信息；细节待核原文）。
 
+### 训练资源（源自官方代码 launch_scripts/，GPU 时数官方未公布）
+- **阶段① caption 预训练**：PixMo-Cap 训 **4 个 epoch**，global batch **128**，
+  12 crops（overlap-and-resize-c2）→ 约 4×1.3M/128 ≈ **4 万 optimizer steps**（推算）。
+- **阶段② 多任务 SFT**（3.2-synthetic 混合）：**30,000 steps**，global batch **256** ≈ 767 万样本次。
+- 两阶段合计 ~**7 万 steps**（7B 档）；README 示例即 **单机 8 卡** 跑 7B 训练/评测（torchrun --nproc-per-node=8 + FSDP），72B 需多机。
+- 关键：LLM（Qwen2/OLMo）与 ViT（CLIP）都是**现成预训练权重**，Molmo 训练本质是"连接+微调"，
+  比从零训 LLM 便宜 2–3 个数量级；真正的大头成本在**人工标注**（71.2 万口述 caption + 230 万 points，金额未公布）。
+
 ## 结果
 | 模型 | 11 基准平均 | 备注 |
 |---|---|---|
