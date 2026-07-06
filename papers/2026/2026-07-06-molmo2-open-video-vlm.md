@@ -59,6 +59,13 @@ rating: "⭐⭐⭐⭐⭐"
 | Video counting (acc) | **35.5** | Qwen3-VL 29.6 | abstract |
 | 短视频/计数/caption | 开放权重+数据类中最佳 | 长视频"competitive" | abstract |
 
+## 与 Qwen3-VL 的头对头（来自论文/AI2 博客口径）
+- **人评 win rate**：Molmo2-8B vs Qwen3-VL-8B = **53%**；4B vs 4B = **51%**（整体打平略胜）。
+- **视频理解 7 基准平均**（NextQA/PerceptionTest/MVBench/Video-MME 等）：Molmo2-8B 开放权重最佳。
+- **分项互有胜负**：开放式视频 QA Molmo2 胜；**captioning 输给 Qwen3-VL 和 GLM-4.1V**。
+- **接地是代差**：video counting 35.5 vs 29.6；video pointing/tracking Qwen3-VL 基本无对位能力。
+- 推理吞吐/延迟的直接对比未见公开数字（性能侧只有训练效率 message-tree 15× 可引）。
+
 ## 局限与存疑
 - 长视频只是"competitive"而非领先——长时序仍是短板（原文如何分析未读到）。
 - 视频接地的惊艳数字集中在 pointing/tracking 这类**该系列自己定义并深耕的任务**上，
