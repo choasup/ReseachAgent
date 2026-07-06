@@ -53,6 +53,20 @@ PixMo-Clocks 等（用 LLM+代码生成图表/文档/时钟图像与 QA）。
 | Molmo-7B-D (Qwen2) | 77.3 | |
 | **Molmo-72B** | **81.2** | 超 Gemini 1.5 Pro/Flash、Claude 3.5 Sonnet；人类偏好第 2（仅次 GPT-4o） |
 
+## 数据与评测的可查资源
+- **训练集可逐条翻看**：HF collection [allenai/pixmo](https://huggingface.co/collections/allenai/pixmo)，
+  含 [pixmo-cap](https://huggingface.co/datasets/allenai/pixmo-cap)、
+  [pixmo-points](https://huggingface.co/datasets/allenai/pixmo-points)（字段：image URL + points(x,y 像素) + label）、
+  [pixmo-ask-model-anything]、[pixmo-cap-qa](https://huggingface.co/datasets/allenai/pixmo-cap-qa)、
+  [pixmo-docs](https://huggingface.co/datasets/allenai/pixmo-docs)、
+  [pixmo-point-explanations](https://huggingface.co/datasets/allenai/pixmo-point-explanations) 等；
+  图像以 URL 存储需自行下载；许可 ODC-BY-1.0。
+  pointing 评测集：[pixmo-points-eval](https://huggingface.co/datasets/allenai/pixmo-points-eval)。
+- **测试集 = 11 个学术基准**（论文汇报口径）：AI2D(test)、ChartQA(test)、VQA v2(test)、
+  DocVQA(test)、InfographicVQA(test)、TextVQA(val)、RealWorldQA、MMMU(val)、
+  MathVista(testmini)、CountBenchQA、Flickr Count；另加大规模人类偏好 Elo 评测。
+  论文自注：同一基准因评测细节不同可差 ~10 个点，对比时优先引用原作者数字。
+
 ## 我的评价
 - **亮点**：一篇论文同时立起三根柱子——数据方法论（口述采集）、差异化能力（pointing）、
   开放原则（不蒸馏+全公开）。72B 打平/超过闭源旗舰给了"人工数据路线"最强背书。
