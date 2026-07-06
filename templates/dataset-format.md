@@ -48,6 +48,13 @@ my-dataset/
 - 训练吞吐瓶颈：WebDataset tar 分片（图+标注打包顺序读）
 - schema 定对了，格式转换是一行脚本；第一天把 schema 定对最重要。
 
+## 补充原则（源自 PixMo 实际存储，见 olmo/data/pixmo_datasets.py）
+- **保留原始标注物**：如口述转写原文 + LLM 精修版并存（transcripts[] + caption），
+  清洗策略可推倒重来，原料不丢。
+- **防泄漏做到图像级**：评测集的 image_url/sha 从训练清单直接剔除（同图不同标注也不进训练）。
+- **切分种子写死并在保存时固化**（PixMo: seed=96817, save_to_disk 时切好），不是训练时现切。
+- **采集协议入字段**：collection_method 标记同类数据的不同采集方式，便于分开消融。
+
 ## 禁忌
 1. ❌ 答案存渲染后字符串（改协议=重标注）
 2. ❌ 图像 base64 进 JSON（存引用）
