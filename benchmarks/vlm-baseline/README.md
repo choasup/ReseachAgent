@@ -4,8 +4,19 @@
 > 差距摸清楚，确定自建题该往哪些维度出。
 > 所有模型名/基准名已对照 VLMEvalKit 源码核实（2026-07-06, open-compass/VLMEvalKit@main）。
 
+## 部署方式（本工具包在有 GPU 的机器上运行；知识库沙箱无 GPU）
+- **A 本机有卡**：24G（4090/3090）即可跑 8B/9B bf16（权重 ~17-19G，高分图基准偶尔紧张，
+  `--reuse` 断点续跑即可）；48G/80G 无压力。
+- **B 租云 GPU（推荐）**：AutoDL/RunPod 租 4090。全套 3 模型 × 9 基准 ≈ 10–15 GPU 时，
+  4090 约 ¥30，A100 约 ¥100–150。租机 → clone VLMEvalKit + 拷本目录脚本 → 跑 → 下载 outputs → 关机。
+- **C API 混合**：Qwen(DashScope)/GLM(智谱) 有 API 且 VLMEvalKit 支持，但 **Molmo 无官方 API
+  必须本地跑**，且 API 版与开源版行为可能不同（口径污染）——不推荐。
+
+**结果回传**：`outputs/summary.csv` + `run_*.log` 放入本目录 `results/` 提交推送，
+在 Claude Code 会话里说一声即可开始差距分析。
+
 ## 硬件要求
-- 8B/9B 模型：1×80G（A100/H100）或 2×48G；bf16。
+- 8B/9B 模型：bf16 下 24G 可跑，48G/80G 稳。
 - 每个"模型×9基准"约 2–6 小时（取决于卡和基准大小）。
 
 ## 环境安装
