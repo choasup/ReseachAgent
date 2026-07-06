@@ -36,12 +36,20 @@ rating: "⭐⭐⭐⭐⭐"
   平均每段视频 900+ 词（远超常规视频 caption 数据）。
 - 自由形式**视频 QA** 微调集；复杂 query 的**目标跟踪**集；创新的**视频 pointing** 集；2 个多图数据集。
 
+**架构**（标准 MLLM 管线）：冻结的 **SigLIP 2 ViT** 编码图像/帧（固定或 tiled 分辨率）
+→ 特征池化 + connector 投影成 token → 喂给预训练 LLM（Qwen3 或 OLMo3）。
+
 **训练配方**：
 - 三阶段：① 图像 caption + 图像 pointing 预训练 → ② 图/视频/多图混合 SFT → ③ 短程长上下文训练。
-- 工程技巧：高效 packing + message-tree 编码；**视觉 token 用双向注意力** + 新的 token 加权策略
-  （消融称有提升，细节待读原文）。
+- **Message-tree 编码**：一段视频常有多条标注（caption、QA、pointing……）。传统做法每条标注
+  重复编码一次视频；message-tree 把视觉输入作为第一条消息、每条标注作为一个分支，线性化成
+  单序列 + 自定义注意力掩码防止分支互看。平均每例 4 条标注，SFT 时一个 16,348 token 序列能
+  packing 进 3.8 个样本，**训练效率 15×**。
+- **视觉 token 双向注意力**：打破 LLM 的因果掩码限制，让视觉 token 互相可见，改善帧间信息整合。
+- **Token 加权策略**：微调时按任务加权 token 损失，平衡多样任务的学习。
 
-**模型家族**：Molmo2 8B / 4B（基座 Qwen 3）+ Molmo2-O 7B（基座 AI2 自家 Olmo，全栈开放）。
+**模型家族**：Molmo2 8B / 4B（基座 Qwen 3）+ Molmo2-O 7B（基座 AI2 自家 OLMo3，全栈开放）。
+另：CVPR 2026 poster 收录。
 
 ## 主要结果
 | 任务 | Molmo2 | 对比 | 出处 |
