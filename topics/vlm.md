@@ -21,6 +21,18 @@ VLM/MLLM 正在成为视觉研究的"底座"。CVPR 2026 全量分析显示其�
 - **From Similarity to Structure** — training-free 上下文压缩，混合图先验（LLM 侧但方法可借鉴） · [arXiv 2604.23277](https://arxiv.org/abs/2604.23277)
 - 关联：agent 侧同期发现见 topics/agents.md（VisCritic / R-WoM 等 8 篇）
 
+**第二轮补扫（同日，换角度：世界模型/长视频/统一模型/小模型）**
+- **HPP: Hierarchical Programmatic Probing for Long Video Understanding** — 解耦感知与推理的程序化探测做长视频理解 · [arXiv 2606.21734](https://arxiv.org/abs/2606.21734) · ⭐疑似 training-free pipeline，贴口味
+- **World2VLM** — 把世界模型的"想象"蒸馏进 VLM 做动态空间推理，世界模型×VLM 交叉 · [arXiv 2604.26934](https://arxiv.org/abs/2604.26934) · ⭐方向新颖
+- **CLGRPO** — 小 VLM 的推理能力增强（RL） · [arXiv 2506.18048](https://arxiv.org/abs/2506.18048) · ⭐小模型贴口味
+- **A Stitch in Time Saves Nine** — 用小 VLM 精准引导大 VLM 加速 · [arXiv 2412.03324](https://arxiv.org/abs/2412.03324) · 小而美加速（2024-12，补录）
+- **Self-Evolving Spatial Reasoning via Geometric Logic Consistency** — 几何逻辑一致性做自监督空间推理进化 · [arXiv 2605.18162](https://arxiv.org/abs/2605.18162)
+- **PnP-U3D** — plug-and-play 3D 框架桥接自回归与扩散的统一理解生成 · [arXiv 2602.03533](https://arxiv.org/abs/2602.03533)
+- **SpaceEra++** — 视频 3D 空间推理全栈系统（数据/模型/训练/推理） · [arXiv 2607.01784](https://arxiv.org/abs/2607.01784) · 7月刚挂出
+- **Lance** — 多任务协同的统一多模态建模 · [arXiv 2605.18678](https://arxiv.org/abs/2605.18678)
+- **UNIVID** — 统一视频审核 VLM（内容安全垂直） · [arXiv 2606.05748](https://arxiv.org/abs/2606.05748)
+- **Do VLMs Have a Moral Backbone?** — VLM 道德判断脆弱性分析（诊断型） · [arXiv 2601.17082](https://arxiv.org/abs/2601.17082)
+
 ### 2026-07-06 · CVPR 2026 全量：VLM × 推理/RL 交叉（80 篇完整清单）
 
 > 来源：52CV 接收清单标题级筛选（同时命中 VLM 桶与推理/RL 桶），链接为 arXiv 或 CVF 原文。
