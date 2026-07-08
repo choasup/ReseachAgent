@@ -5,7 +5,7 @@
 网页 UI：拖图 + 问题 -> 三模型并行推理 -> 并排显示。
 端口 7860，用 ssh -L 转发到本地浏览器访问。
 """
-import os, sys, io, json, base64, tempfile, time, threading, urllib.request, traceback
+import os, sys, io, json, base64, hashlib, tempfile, time, threading, urllib.request, traceback
 from concurrent.futures import ThreadPoolExecutor
 from http.server import ThreadingHTTPServer, BaseHTTPRequestHandler
 from PIL import Image
@@ -94,6 +94,18 @@ def thumb_uri(img, box=220):
     return "data:image/jpeg;base64," + base64.b64encode(buf.getvalue()).decode()
 
 
+def dedup_key(prompt, img):
+    """图+问题一模一样的判重键：sha1(问题 + 原图像素字节)。"""
+    h = hashlib.sha1()
+    h.update(prompt.encode("utf-8")); h.update(b"\x00")
+    h.update(img.tobytes())
+    return h.hexdigest()
+
+
+SEEN = set()          # 已记录的 (图+问题) 判重键
+SEEN_LOCK = threading.Lock()
+
+
 def save_history(rec):
     try:
         with HIST_LOCK, open(HIST_PATH, "a", encoding="utf-8") as f:
@@ -119,14 +131,30 @@ def load_history(limit=200):
 
 def infer(image_uri, prompt):
     img, uri = resize_data_uri(image_uri)
+    key = dedup_key(prompt, img)
+    with SEEN_LOCK:
+        dup = key in SEEN
     futs = {"qwen": POOL.submit(run_qwen, uri, prompt),
             "glm": POOL.submit(run_glm, uri, prompt),
             "molmo": POOL.submit(run_molmo, img, prompt)}
     res = {k: v.result() for k, v in futs.items()}
+    if dup:      # 图+问题完全相同：照常跑并返回，但不记录
+        return {"result": res, "record": None, "duplicate": True}
     rec = {"id": int(time.time() * 1000), "ts": time.strftime("%Y-%m-%d %H:%M:%S"),
-           "prompt": prompt, "thumb": thumb_uri(img), **res}
+           "prompt": prompt, "key": key, "thumb": thumb_uri(img), **res}
+    with SEEN_LOCK:
+        SEEN.add(key)
     save_history(rec)
-    return {"result": res, "record": rec}
+    return {"result": res, "record": rec, "duplicate": False}
+
+
+def rebuild_seen():
+    """启动时从历史重建判重键集合（老记录若无 key，用 问题+缩略图 兜底）。"""
+    for r in load_history(limit=100000):
+        k = r.get("key")
+        if not k:
+            k = hashlib.sha1((r.get("prompt", "") + (r.get("thumb", ""))).encode()).hexdigest()
+        SEEN.add(k)
 
 
 HTML = """<!doctype html><html lang=zh><head><meta charset=utf-8>
@@ -183,6 +211,8 @@ white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .histhead h2{font-size:15px;margin:0;font-family:var(--mono)}
 .histhead #hcount{color:var(--faint);font-weight:400}
 .histnote{font-size:11.5px;color:var(--faint);margin-left:auto;font-family:var(--mono)}
+.dupnote{display:none;font-family:var(--mono);font-size:11px;color:var(--molmo);
+background:color-mix(in srgb,var(--molmo) 13%,transparent);padding:3px 9px;border-radius:20px}
 .hempty{color:var(--faint);font-size:13px;padding:24px 0;text-align:center}
 .hcard{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:13px 15px;margin-bottom:12px}
 .hhead{display:flex;gap:12px;align-items:center;margin-bottom:10px}
@@ -221,7 +251,9 @@ white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
   <div class=rc id=r_glm style="--c:var(--glm)"><h3><span class=dot></span>GLM-4.1V-9B</h3><div class=t>Thinking · vLLM</div><div class=ans>—</div></div>
   <div class=rc id=r_molmo style="--c:var(--molmo)"><h3><span class=dot></span>Molmo-7B-D</h3><div class=t>transformers</div><div class=ans>—</div></div>
 </div>
-<div class=histhead><h2>测试记录 <span id=hcount>0</span></h2><span class=histnote>存于服务器，刷新/换设备都在</span></div>
+<div class=histhead><h2>测试记录 <span id=hcount>0</span></h2>
+  <span id=dupnote class=dupnote>本次图+问题与已有记录相同，已跑但未重复记录</span>
+  <span class=histnote>存于服务器，刷新/换设备都在 · 图+问题相同不重复记录</span></div>
 <div id=history></div>
 </div>
 <script>
@@ -251,10 +283,13 @@ run.onclick=async()=>{
         if(r.think){const el=document.createElement('details');el.className='think';
           el.innerHTML='<summary>思维链</summary>'+esc(r.think);c.appendChild(el)}}}
     if(d.record)prependHistory(d.record);
+    else if(d.duplicate)flashDup();
   }catch(e){alert('请求失败: '+e)}
   run.disabled=false;run.textContent='运行三模型';
 };
 function esc(s){return String(s).replace(/[&<>"]/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[ch]))}
+function flashDup(){const n=document.getElementById('dupnote');n.style.display='inline';
+  clearTimeout(n._t);n._t=setTimeout(()=>n.style.display='none',3500);}
 const MODS=[['qwen','Qwen','var(--qwen)'],['glm','GLM','var(--glm)'],['molmo','Molmo','var(--molmo)']];
 function histCard(r){
   const el=document.createElement('div');el.className='hcard';
@@ -319,6 +354,8 @@ class H(BaseHTTPRequestHandler):
 
 
 if __name__ == "__main__":
+    rebuild_seen()
+    print(f"[demo] history dedup: {len(SEEN)} unique (图+问题) keys loaded", flush=True)
     port = int(os.environ.get("DEMO_PORT", "7860"))
     print(f"[demo] serving on 0.0.0.0:{port}", flush=True)
     ThreadingHTTPServer(("0.0.0.0", port), H).serve_forever()
