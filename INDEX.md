@@ -6,13 +6,17 @@
 _最后更新：2026-07-08_
 
 ## 统计
-- 已归档论文：4
+- 已归档论文：6
 - 追踪主题：2（vlm + agents）
 
 ## 按主题
 
 ### Agent / 过程奖励
 - **VisCritic** (投稿 ECCV'26) · 动作前后截图差分当步级奖励：Siamese ViT + 零人工标注 + 推理期即插即用 · [笔记](papers/2026/2026-07-08-viscritic-visual-process-reward.md) · `GUI-agent` `process-reward` `plug-and-play`
+
+### VLM 前沿方法
+- **HPP** · 长视频理解改写成"LLM 写代码逐步探查视频"，感知与推理解耦，LongVideoBench 等大幅提升 · [笔记](papers/2026/2026-07-08-hpp-programmatic-video-probing.md) · `long-video` `training-free` `code-as-tool`
+- **World2VLM** · 世界模型合成未来视角当训练监督，把"想象力"蒸馏进 VLM——推理期零额外开销反超 test-time 方法 · [笔记](papers/2026/2026-07-08-world2vlm-imagination-distillation.md) · `world-model` `distillation` `spatial`
 
 ### 开源 VLM / 视频理解
 - **Molmo2** (AI2) · 全开放（权重+数据+配方）视频 VLM：9 个新数据集不蒸馏闭源模型，8B 在 video pointing/tracking 上超 Gemini 3 Pro (F1 38.4 vs 20.0) · [笔记](papers/2026/2026-07-06-molmo2-open-video-vlm.md) · `open-weights` `video-grounding` `pointing` `dataset`
@@ -23,6 +27,8 @@ _最后更新：2026-07-08_
 
 ## 按时间线
 <!-- 最近归档的在最上面 -->
+- 2026-07-08 · **HPP** — 程序化探查解耦长视频感知与推理 · [笔记](papers/2026/2026-07-08-hpp-programmatic-video-probing.md)
+- 2026-07-08 · **World2VLM** — 世界模型想象力蒸馏进 VLM · [笔记](papers/2026/2026-07-08-world2vlm-imagination-distillation.md)
 - 2026-07-08 · **VisCritic** — 视觉状态对比做 GUI agent 过程奖励 · [笔记](papers/2026/2026-07-08-viscritic-visual-process-reward.md)
 - 2026-07-06 · **Molmo2** — AI2 全开放视频 VLM（pointing/tracking 超 Gemini 3 Pro） · [笔记](papers/2026/2026-07-06-molmo2-open-video-vlm.md)
 - 2026-07-06 · **Molmo and PixMo** — 系列一代，开放 VLM 方法论奠基 · [笔记](papers/2026/2026-07-06-molmo-pixmo.md)
