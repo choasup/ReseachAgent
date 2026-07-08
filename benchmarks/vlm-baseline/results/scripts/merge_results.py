@@ -16,7 +16,7 @@ import sys, csv, glob, os, json, collections, re
 
 root = sys.argv[1] if len(sys.argv) > 1 else "outputs"
 BENCHES = ["MMMU_DEV_VAL", "MMStar", "RealWorldQA", "DocVQA_VAL", "ChartQA_TEST",
-           "OCRBench", "POPE", "HallusionBench", "CountBenchQA"]
+           "OCRBench", "POPE", "HallusionBench", "CountBenchQA", "Inspection"]
 
 
 def _num(x):
