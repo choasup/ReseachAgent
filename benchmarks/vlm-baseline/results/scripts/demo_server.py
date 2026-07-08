@@ -10,10 +10,12 @@ from concurrent.futures import ThreadPoolExecutor
 from http.server import ThreadingHTTPServer, BaseHTTPRequestHandler
 from PIL import Image
 
-BASE = "/home/tione/notebook/research/choasliu"
-HIST_PATH = f"{BASE}/013_mllm/benchmarks/vlm-baseline/demo_history.jsonl"
+BASE = "/home/tione/notebook/research/choasliu"          # 共享资源根（conda/hf_home/LMUData）
+PROJ = os.path.dirname(os.path.abspath(__file__))        # 项目根（随本文件位置走，搬迁无需改）
+HIST_PATH = os.path.join(PROJ, "demo_history.jsonl")
+EX_PATH = os.path.join(PROJ, "examples.json")
 HIST_LOCK = threading.Lock()
-sys.path.insert(0, f"{BASE}/013_mllm/benchmarks/vlm-baseline/VLMEvalKit")
+sys.path.insert(0, os.path.join(PROJ, "VLMEvalKit"))
 os.environ.setdefault("HF_HOME", f"{BASE}/hf_home")
 os.environ.setdefault("HF_HUB_OFFLINE", "1")
 os.environ.setdefault("HIP_VISIBLE_DEVICES", "2")   # 物理 Dev1（空闲）
@@ -168,6 +170,15 @@ white-space:pre-wrap;max-height:160px;overflow:auto}
 .spin{display:inline-block;width:13px;height:13px;border:2px solid var(--line);border-top-color:var(--c);
 border-radius:50%;animation:s .7s linear infinite;vertical-align:-2px}
 @keyframes s{to{transform:rotate(360deg)}}
+#exwrap{margin-bottom:16px}
+.exlabel{font-family:var(--mono);font-size:11px;color:var(--faint);margin-bottom:8px;letter-spacing:.04em}
+#examples{display:flex;gap:10px;overflow-x:auto;padding-bottom:4px}
+.excard{flex:none;width:96px;cursor:pointer;border:1px solid var(--line);border-radius:10px;overflow:hidden;
+background:var(--card);transition:border-color .15s}
+.excard:hover{border-color:var(--qwen)}
+.excard img{width:96px;height:70px;object-fit:cover;display:block;background:var(--bg)}
+.excard .exb{font-family:var(--mono);font-size:9.5px;color:var(--mut);padding:4px 6px;text-align:center;
+white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .histhead{display:flex;align-items:baseline;gap:12px;margin:34px 0 14px;padding-bottom:8px;border-bottom:1px solid var(--line)}
 .histhead h2{font-size:15px;margin:0;font-family:var(--mono)}
 .histhead #hcount{color:var(--faint);font-weight:400}
@@ -188,6 +199,8 @@ border-radius:50%;animation:s .7s linear infinite;vertical-align:-2px}
 </style></head><body><div class=wrap>
 <h1>VLM 三模型对比 demo</h1>
 <p class=sub>拖入 / 点击上传一张图 → 输入问题 → Qwen3-VL-8B · GLM-4.1V-9B · Molmo-7B-D 并行作答。judge 修正口径同评测；模型在 AMD MI308X 本地推理。</p>
+<div id=exwrap><div class=exlabel>示例用例（点一下载入图 + 问题，来自各基准）</div>
+  <div id=examples></div></div>
 <div class=panel>
   <div id=drop><div class=ph>拖图到这里<br>或点击选择<br><span style="font-size:11px">JPG / PNG</span></div>
     <input id=file type=file accept=image/* hidden></div>
@@ -254,6 +267,14 @@ function histCard(r){
 function prependHistory(r){const h=document.getElementById('history');
   document.getElementById('hempty')?.remove();h.insertBefore(histCard(r),h.firstChild);
   document.getElementById('hcount').textContent=h.querySelectorAll('.hcard').length;}
+async function loadExamples(){try{const d=await(await fetch('/examples')).json();
+  const box=document.getElementById('examples');if(!d.length){document.getElementById('exwrap').style.display='none';return}
+  d.forEach(ex=>{const c=document.createElement('div');c.className='excard';c.title=ex.prompt;
+    c.innerHTML='<img src="'+ex.img+'"><div class=exb>'+esc(ex.bench)+'</div>';
+    c.onclick=()=>{show(ex.img);document.getElementById('q').value=ex.prompt;
+      document.getElementById('drop').scrollIntoView({block:'center'})};
+    box.appendChild(c)});}catch(e){}}
+loadExamples();
 async function loadHistory(){try{const d=await(await fetch('/history')).json();
   const h=document.getElementById('history');h.innerHTML='';
   if(!d.length){h.innerHTML='<div id=hempty class=hempty>还没有测试记录。上传一张图跑一次就会记在这里。</div>';}
@@ -275,6 +296,12 @@ class H(BaseHTTPRequestHandler):
             self._send(200, HTML, "text/html; charset=utf-8")
         elif self.path == "/history":
             self._send(200, json.dumps(load_history(), ensure_ascii=False))
+        elif self.path == "/examples":
+            try:
+                with open(EX_PATH, encoding="utf-8") as f:
+                    self._send(200, f.read())
+            except Exception:
+                self._send(200, "[]")
         else:
             self._send(404, b"nf")
 
