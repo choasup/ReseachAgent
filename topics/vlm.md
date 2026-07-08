@@ -3,7 +3,7 @@ topic: "VLM / 多模态大模型"
 slug: "vlm"
 keywords: [vision-language model, multimodal LLM, VLM efficiency, visual reasoning, VLM RAG, training-free]
 created: "2026-07-06"
-last_tracked: "2026-07-06"
+last_tracked: "2026-07-08"
 ---
 
 # 主题追踪：VLM / 多模态大模型
@@ -14,6 +14,12 @@ VLM/MLLM 正在成为视觉研究的"底座"。CVPR 2026 全量分析显示其�
 **VLM × 推理/RL**（全场增速第一的方向，1.8%→8.7%）。
 
 ## 追踪记录
+
+### 2026-07-08 · 近期新论文（WebSearch，abstract 级未深读）
+- **One Token per Multimodal Evidence** — 每条多模态证据压成 1 个 latent memory token，资源受限 QA 的极致压缩 · [arXiv 2606.10572](https://arxiv.org/abs/2606.10572) · ⭐小而美
+- **RedVTP** — training-free 加速扩散 VLM：masked token 引导视觉 token 剪枝（接库里 Thinking Diffusion / dMLLM-TTS 的 dMLLM 线） · [arXiv 2511.12428](https://arxiv.org/abs/2511.12428)
+- **From Similarity to Structure** — training-free 上下文压缩，混合图先验（LLM 侧但方法可借鉴） · [arXiv 2604.23277](https://arxiv.org/abs/2604.23277)
+- 关联：agent 侧同期发现见 topics/agents.md（VisCritic / R-WoM 等 8 篇）
 
 ### 2026-07-06 · CVPR 2026 全量：VLM × 推理/RL 交叉（80 篇完整清单）
 
