@@ -1,0 +1,10 @@
+benchmark,GLM4_1VThinking-9b,Qwen3-VL-8B-Instruct,molmo-7B-D-0924
+MMMU_DEV_VAL,68.11,66.11,47.67
+MMStar,72.87,71.53,56.27
+RealWorldQA,72.42,70.72,70.72
+DocVQA_VAL,91.75,95.69,91.5
+ChartQA_TEST,57.4,83.2,83.76
+OCRBench,86.2,89.9,66.1
+POPE,87.0,87.64,89.01
+HallusionBench,73.29,73.82,62.36
+CountBenchQA,90.14,90.14,85.42

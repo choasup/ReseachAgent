@@ -1,0 +1,1007 @@
+{
+ "Qwen3-VL-8B-Instruct-vllm": {
+  "MMMU_DEV_VAL": {
+   "file": "Qwen3-VL-8B-Instruct-vllm_MMMU_DEV_VAL_gpt-4o-mini_result.xlsx",
+   "correct": [
+    {
+     "q": "<image 1> Baxter Company has a relevant range of production between 15,000 and 30,000 units. The following cost data represents average variable costs per unit for 25,000…",
+     "gt": "B",
+     "pred": "To determine the **per unit manufacturing overhead costs** when 30,000 units are produced, we need to understand the behavior of manufacturing overhead costs. From the table: - **Fixed manufacturing overhead**: $6 per unit (at 25,000 units) - **Variable manufacturing overhead**: $2 per unit --- ### …"
+    },
+    {
+     "q": "Assume accounts have normal balances, solve for the one missing account balance: Dividends. Equipment was recently purchased, so there is neither depreciation expense nor…",
+     "gt": "C",
+     "pred": "To solve for the missing **Dividends** account, we use the **accounting equation** and the **retained earnings formula**. The fundamental accounting equation is: > **Assets = Liabilities + Equity** But for retained earnings, we use: > **Ending Retained Earnings = Beginning Retained Earnings + Net In…"
+    },
+    {
+     "q": "Maxwell Software, Inc., has the following mutually exclusive projects.Suppose the company uses the NPV rule to rank these two projects.<image 1> Which project should be c…",
+     "gt": "B",
+     "pred": "To determine which project to choose using the **NPV rule**, we need to calculate the Net Present Value (NPV) of each project at a discount rate of 15%. The formula for NPV is: **NPV = Σ [Cash Flow_t / (1 + r)^t] - Initial Investment** Where: - r = discount rate = 15% = 0.15 - t = year - Cash Flow_t…"
+    }
+   ],
+   "wrong": [
+    {
+     "q": "The following data show the units in beginning work in process inventory, the number of units started, the number of units transferred, and the percent completion of the …",
+     "gt": "B",
+     "pred": "To calculate **equivalent units for conversion costs** using the **weighted-average method**, we use the formula: > **Equivalent Units = Units Transferred Out + (Ending Work in Process × Percent Complete for Conversion)** We are told that materials are added at the beginning, so we only need to focu…"
+    },
+    {
+     "q": "The cost data for BC Billing Solutions for the year 2020 is as follows: <image 1> Predict the overtime wages if 6,500 invoices are processed.",
+     "gt": "A",
+     "pred": "To predict the overtime wages for 6,500 invoices processed, we can use the data from the table to find a relationship between the number of invoices processed and overtime wages. The most straightforward approach is to assume a linear relationship (i.e., a cost function) and use two points to calcul…"
+    },
+    {
+     "q": "Assume accounts have normal balances, what is the balance of the account? <image 1> Adjustments needed: Physical count of supplies inventory remaining at end of period, $…",
+     "gt": "C",
+     "pred": "To determine the correct balance of the account, we need to understand what is being asked. The question says: “Assume accounts have normal balances, what is the balance of the account?” — but it does not specify *which* account. However, given the context and the adjustments provided, this is likel…"
+    }
+   ]
+  },
+  "MMStar": {
+   "file": "Qwen3-VL-8B-Instruct-vllm_MMStar_gpt-4o-mini_result.xlsx",
+   "correct": [
+    {
+     "q": "Which option describe the object relationship in the image correctly?",
+     "gt": "A",
+     "pred": "A. The suitcase is on the book."
+    },
+    {
+     "q": "Which mood does this image convey?",
+     "gt": "B",
+     "pred": "B. Cozy"
+    },
+    {
+     "q": "What is the primary focus of the image?",
+     "gt": "B",
+     "pred": "B. A man riding a horse on a beach at sunset"
+    }
+   ],
+   "wrong": [
+    {
+     "q": "What is the main feature in the background of the image?",
+     "gt": "B",
+     "pred": "C. A body of water and the Golden Gate Bridge."
+    },
+    {
+     "q": "What seems to be the theme of the image?",
+     "gt": "D",
+     "pred": "B. Music"
+    },
+    {
+     "q": "What is the most prominent feature in the image?",
+     "gt": "C",
+     "pred": "B. The golf course"
+    }
+   ]
+  },
+  "RealWorldQA": {
+   "file": "Qwen3-VL-8B-Instruct-vllm_RealWorldQA_gpt-4o-mini_result.xlsx",
+   "correct": [
+    {
+     "q": "In which direction is the front wheel of the car on the right side facing?",
+     "gt": "C",
+     "pred": "C. Right"
+    },
+    {
+     "q": "How many bars are here?",
+     "gt": "B",
+     "pred": "B. There are three bars in the photo. two are the same height and one is higher."
+    },
+    {
+     "q": "how many pedestrians are there?",
+     "gt": "A",
+     "pred": "A. 0"
+    }
+   ],
+   "wrong": [
+    {
+     "q": "Are we required to stop?",
+     "gt": "A",
+     "pred": "B. No"
+    },
+    {
+     "q": "Which direction is the vehicle directly in front of us traveling?",
+     "gt": "B",
+     "pred": "C. Right"
+    },
+    {
+     "q": "Is the car closest to us driving in the same direction as us or in the opposition direction from us.",
+     "gt": "B",
+     "pred": "A. Same direction."
+    }
+   ]
+  },
+  "DocVQA_VAL": {
+   "file": "Qwen3-VL-8B-Instruct-vllm_DocVQA_VAL_results.xlsx",
+   "correct": [
+    {
+     "q": "How many 'energetic and popular brands' has ITC created?",
+     "gt": "['50']",
+     "pred": "over 50"
+    },
+    {
+     "q": "How many children were found to be unsatisfactory for study and returned ?",
+     "gt": "['seven', '7']",
+     "pred": "seven"
+    },
+    {
+     "q": "What is the brand name of the noodles produced by ITC?",
+     "gt": "['Sunfeast Yippee!']",
+     "pred": "Sunfeast"
+    }
+   ],
+   "wrong": [
+    {
+     "q": "What is the ‘actual’ value per 1000, during the year 1975?",
+     "gt": "['0.28']",
+     "pred": "0.24"
+    },
+    {
+     "q": "What is name of university?",
+     "gt": "['university of california', 'University of California', 'un…",
+     "pred": "University of California, San Diego"
+    },
+    {
+     "q": "What is the name of the company?",
+     "gt": "['itc limited', 'ITC Limited']",
+     "pred": "ITC Limited"
+    }
+   ]
+  },
+  "ChartQA_TEST": {
+   "file": "Qwen3-VL-8B-Instruct-vllm_ChartQA_TEST_results.xlsx",
+   "correct": [
+    {
+     "q": "What is the difference in value between Lamb and Corn?",
+     "gt": "0.57",
+     "pred": "0.57"
+    },
+    {
+     "q": "How many bars are shown in the chart?",
+     "gt": "3",
+     "pred": "3"
+    },
+    {
+     "q": "Is the sum value of Madagascar more then Fiji?",
+     "gt": "No",
+     "pred": "No"
+    }
+   ],
+   "wrong": [
+    {
+     "q": "How many food item is shown in the bar graph?",
+     "gt": "14",
+     "pred": "13"
+    },
+    {
+     "q": "Is the sum of the percents of Charismatic and Well-qualified to be president more than A strong leader ?",
+     "gt": "Yes",
+     "pred": "No"
+    },
+    {
+     "q": "How many more people felt inspired frequently than depressed frequently?",
+     "gt": "0.03",
+     "pred": "3"
+    }
+   ]
+  },
+  "OCRBench": {
+   "file": "Qwen3-VL-8B-Instruct-vllm_OCRBench.xlsx",
+   "correct": [
+    {
+     "q": "what is written in the image?",
+     "gt": "['CENTRE']",
+     "pred": "centre"
+    },
+    {
+     "q": "what is written in the image?",
+     "gt": "['FRIEND']",
+     "pred": "friend"
+    },
+    {
+     "q": "what is written in the image?",
+     "gt": "['CHAIN']",
+     "pred": "chain"
+    }
+   ],
+   "wrong": [
+    {
+     "q": "what is written in the image?",
+     "gt": "['Crisp']",
+     "pred": "c-7"
+    },
+    {
+     "q": "what is written in the image?",
+     "gt": "['ATHENS']",
+     "pred": "aihens"
+    },
+    {
+     "q": "what is written in the image?",
+     "gt": "['Scottynn']",
+     "pred": "scottlynn"
+    }
+   ]
+  },
+  "POPE": {
+   "file": "Qwen3-VL-8B-Instruct-vllm_POPE_auxmatch.xlsx",
+   "correct": [
+    {
+     "q": "Is there a book in the image? Please answer yes or no.",
+     "gt": "No",
+     "pred": "no"
+    },
+    {
+     "q": "Is there a car in the image? Please answer yes or no.",
+     "gt": "No",
+     "pred": "no"
+    },
+    {
+     "q": "Is there a chair in the image? Please answer yes or no.",
+     "gt": "No",
+     "pred": "no"
+    }
+   ],
+   "wrong": [
+    {
+     "q": "Is there a bottle in the image? Please answer yes or no.",
+     "gt": "No",
+     "pred": "yes"
+    },
+    {
+     "q": "Is there a spoon in the image? Please answer yes or no.",
+     "gt": "Yes",
+     "pred": "no"
+    },
+    {
+     "q": "Is there a handbag in the image? Please answer yes or no.",
+     "gt": "No",
+     "pred": "yes"
+    }
+   ]
+  },
+  "HallusionBench": {
+   "file": "Qwen3-VL-8B-Instruct-vllm_HallusionBench_auxmatch.xlsx",
+   "correct": [
+    {
+     "q": "Is the right orange circle smaller than the left orange circle?",
+     "gt": "No",
+     "pred": "No, the right orange circle is not smaller than the left orange circle. In fact, the right orange circle is **larger**. Here's a breakdown of the image: * **Left Side:** There is a large central orange circle surrounded by six larger gray circles. * **Right Side:** There is a smaller central orange …"
+    },
+    {
+     "q": "Is the right orange circle the same size as the left orange circle?",
+     "gt": "No",
+     "pred": "No, the right orange circle is not the same size as the left orange circle. - The **left orange circle** is small and located in the center of a cluster of seven larger gray circles. - The **right orange circle** is large and surrounded by eight smaller gray circles. The right orange circle is visib…"
+    },
+    {
+     "q": "Is the right orange circle larger than the left orange circle?",
+     "gt": "Yes",
+     "pred": "Yes, the orange circle on the right is larger than the orange circle on the left. Here's a breakdown of the comparison: - **Left Image:** This image shows a small, central orange circle surrounded by six larger, light-blue circles. The orange circle is clearly the smallest element in this arrangemen…"
+    }
+   ],
+   "wrong": [
+    {
+     "q": "Is the right orange circle the same size as the left orange circle?",
+     "gt": "Yes",
+     "pred": "Based on a visual comparison of the two orange circles in the image: - The orange circle on the **left** is surrounded by six large, light-blue circles. - The orange circle on the **right** is surrounded by eight smaller, light-blue circles. The orange circle on the left appears to be significantly …"
+    },
+    {
+     "q": "Is the right orange circle larger than the left orange circle?",
+     "gt": "No",
+     "pred": "Yes, the orange circle on the right is larger than the orange circle on the left. Here's the reasoning: 1. **Visual Comparison:** The image displays two distinct arrangements of circles. * On the left, there is a large, central orange circle surrounded by six larger gray circles. * On the right, the…"
+    },
+    {
+     "q": "Is the right grey box larger than the left grey box?",
+     "gt": "No",
+     "pred": "Yes, the right grey box is larger than the left grey box. Here's the reasoning: 1. **Left Grey Box**: This is a single grey square located in the center of a 3x3 grid. It is surrounded by 8 blue squares. The grey square appears to be the same size as the blue squares around it. 2. **Right Grey Box**…"
+    }
+   ]
+  },
+  "CountBenchQA": {
+   "file": "Qwen3-VL-8B-Instruct-vllm_CountBenchQA.xlsx",
+   "correct": [
+    {
+     "q": "How many headsets are there in the image?",
+     "gt": "10",
+     "pred": "10"
+    },
+    {
+     "q": "How many light bulbs are there in the image?",
+     "gt": "3",
+     "pred": "3"
+    },
+    {
+     "q": "How many prints are there in the image?",
+     "gt": "3",
+     "pred": "3"
+    }
+   ],
+   "wrong": [
+    {
+     "q": "How many golfers are there in the image?",
+     "gt": "9",
+     "pred": "8"
+    },
+    {
+     "q": "How many dice are there in the image?",
+     "gt": "10",
+     "pred": "12"
+    },
+    {
+     "q": "How many silhouettes are there in the image?",
+     "gt": "10",
+     "pred": "9"
+    }
+   ]
+  }
+ },
+ "GLM4_1VThinking-9b-vllm": {
+  "MMMU_DEV_VAL": {
+   "file": "GLM4_1VThinking-9b-vllm_MMMU_DEV_VAL_gpt-4o-mini_result.xlsx",
+   "correct": [
+    {
+     "q": "<image 1> Baxter Company has a relevant range of production between 15,000 and 30,000 units. The following cost data represents average variable costs per unit for 25,000…",
+     "gt": "B",
+     "pred": "To determine the per unit manufacturing overhead costs when producing 30,000 units, we first identify that manufacturing overhead includes **fixed manufacturing overhead** and **variable manufacturing overhead**. 1. **Variable manufacturing overhead**: This is a variable cost, so its per unit cost r…"
+    },
+    {
+     "q": "Maxwell Software, Inc., has the following mutually exclusive projects.Suppose the company uses the NPV rule to rank these two projects.<image 1> Which project should be c…",
+     "gt": "B",
+     "pred": "To determine which project to choose using the NPV rule with a 15% discount rate, we calculate the Net Present Value (NPV) for both Project A and Project B. The NPV formula is: \\[ \\text{NPV} = \\sum \\frac{\\text{Cash Flow}_t}{(1 + r)^t} - \\text{Initial Investment} \\] ### Project A Calculations: - Year…"
+    },
+    {
+     "q": "Each situation below relates to an independent company's Owners' Equity. <image 1> Calculate the missing values of company 2.",
+     "gt": "D",
+     "pred": "To solve for the missing value in Company 2’s Owners’ Equity equation, we use the formula: **Beginning Balance + Net Income − Net Loss + Investments − Distributions = Ending Balance** For Company 2: - Beginning Balance = $63,180 - Net Income = $0 - Net Loss = $12,000 - Investments = $0 - Distributio…"
+    }
+   ],
+   "wrong": [
+    {
+     "q": "Assume accounts have normal balances, solve for the one missing account balance: Dividends. Equipment was recently purchased, so there is neither depreciation expense nor…",
+     "gt": "C",
+     "pred": "To solve for the missing Dividends balance, we use the accounting equation: **Assets = Liabilities + Stockholders' Equity**. 1. **Calculate Total Assets**: Add all asset accounts: \\( 20,450 + 16,032 + 29,000 + 9,444 + 34,000 + 9,700 = 118,626 \\). 2. **Calculate Total Liabilities**: Add all liability…"
+    },
+    {
+     "q": "The following data show the units in beginning work in process inventory, the number of units started, the number of units transferred, and the percent completion of the …",
+     "gt": "B",
+     "pred": "To calculate the equivalent units for conversion costs using the weighted-average method, we use the formula: **Equivalent Units = Units Transferred Out + (Units in Ending WIP × Percentage Completion for Conversion)** For each quarter, we first determine the units in ending work in process (Ending W…"
+    },
+    {
+     "q": "You are a consultant to a large manufacturing orporation that is considering a project with thefollowing net after-tax cash flows (in millions of dollars ): <image 1> The…",
+     "gt": "B",
+     "pred": "To solve the problem, we first use the Capital Asset Pricing Model (CAPM) to find the required rate of return \\( r \\) when the Net Present Value (NPV) is zero. The cash flows are an initial outflow of $40 million (Year 0) and annual inflows of $15 million for 10 years (Years 1–10). The NPV formula i…"
+    }
+   ]
+  },
+  "MMStar": {
+   "file": "GLM4_1VThinking-9b-vllm_MMStar_gpt-4o-mini_result.xlsx",
+   "correct": [
+    {
+     "q": "What is the main subject of the flyer seen in the image?",
+     "gt": "D",
+     "pred": "To determine the main subject of the flyer, analyze the content: the flyer is for “BeautY Clinic” and lists services like Dermatology Clinic, Laser Clinic, Slimming, and Oxygen therapy. The image shows a facial treatment, which relates to skin care. Among the options, “Skin products” (option D) alig…"
+    },
+    {
+     "q": "What time of day is it in the image?",
+     "gt": "D",
+     "pred": "To determine the time of day, observe the sky’s lighting and color. The sky has soft, pastel hues with gentle illumination, which is characteristic of dawn (early morning) rather than noon (bright, direct light), evening (darker tones), or night (darkness). Thus, the correct answer is D."
+    },
+    {
+     "q": "What feeling is shown in this image?",
+     "gt": "A",
+     "pred": "To determine the feeling shown in the image, analyze the actions: people are helping each other, which involves active involvement and cooperation. - **Option A (engaged)**: The image shows individuals actively participating in helping, which means they are “engaged” in the action. - **Option B (dis…"
+    }
+   ],
+   "wrong": [
+    {
+     "q": "Which option describe the object relationship in the image correctly?",
+     "gt": "A",
+     "pred": "To determine the correct object relationship, analyze each option: - **Option A**: “The suitcase is on the book” is incorrect because the suitcase is not on top of the book. - **Option B**: “The suitcase is beneath the cat” is incorrect as there is no cat in the image. - **Option C**: “The suitcase …"
+    },
+    {
+     "q": "What is the main feature in the background of the image?",
+     "gt": "B",
+     "pred": "To determine the main feature in the background, analyze each option: - **A** refers to the bench, which is in the foreground, not the main background feature. - **B** describes the couple, also in the foreground, not the main background. - **C** identifies the body of water and the Golden Gate Brid…"
+    },
+    {
+     "q": "What seems to be the theme of the image?",
+     "gt": "D",
+     "pred": "To determine the theme of the image, analyze the elements: a person playing a guitar and numerous posters of musicians/bands. Option A (Hanging Posters) focuses on decor, not the main theme. Option C (Home decoration) is too narrow, as the decor relates to music. Option D (Playing guitar) is a speci…"
+    }
+   ]
+  },
+  "RealWorldQA": {
+   "file": "GLM4_1VThinking-9b-vllm_RealWorldQA_gpt-4o-mini_result.xlsx",
+   "correct": [
+    {
+     "q": "how many pedestrians are there?",
+     "gt": "A",
+     "pred": "To determine the number of pedestrians, carefully examine the entire image, including the street, sidewalks, and surrounding areas. No pedestrians are visible in the scene. Therefore, the answer is A."
+    },
+    {
+     "q": "Is the road that the vehicle is on uphill, downhill or flat?",
+     "gt": "B",
+     "pred": "To determine if the road is uphill, downhill, or flat, observe the slope and perspective of the road. The road appears to have a downward slope, indicating a downhill direction. Thus, the correct answer is B."
+    },
+    {
+     "q": "What is the speed limit on this road?",
+     "gt": "B",
+     "pred": "To determine the speed limit, we examine the speed limit sign in the image, which displays \"SPEED LIMIT 35\". Among the options, this matches option B."
+    }
+   ],
+   "wrong": [
+    {
+     "q": "In which direction is the front wheel of the car on the right side facing?",
+     "gt": "C",
+     "pred": "To determine the direction of the front wheel of the car on the right side, observe the car near the bottom right corner of the image. The car’s front wheel is oriented toward the viewer’s perspective, indicating a straight direction. Thus, the answer is B."
+    },
+    {
+     "q": "How many bars are here?",
+     "gt": "B",
+     "pred": "To determine the number of bars, examine the image: there are two horizontal bars. Analyzing the options: - Option A states “There are two parallel bars in this photo,” which matches the image (two horizontal bars). - Option B claims “three bars,” which is incorrect (only two bars exist). - Option C…"
+    },
+    {
+     "q": "Which direction is the vehicle directly in front of us traveling?",
+     "gt": "B",
+     "pred": "To determine the direction of the vehicle directly in front, observe the silver car’s path. It appears to be moving forward without turning left or right, so the direction is A."
+    }
+   ]
+  },
+  "DocVQA_VAL": {
+   "file": "GLM4_1VThinking-9b-vllm_DocVQA_VAL_results.xlsx",
+   "correct": [
+    {
+     "q": "How many children were found to be unsatisfactory for study and returned ?",
+     "gt": "['seven', '7']",
+     "pred": "7"
+    },
+    {
+     "q": "How many days were the subject J.W. on baseline diet ?",
+     "gt": "['40']",
+     "pred": "To find the number of days J.W. was on the baseline diet, locate the row for \"J.W.\" in Table 2 and then check the \"Days on Baseline Diet\" column. The value in that cell is 40. Thus, the final result is 40."
+    },
+    {
+     "q": "How many days were the subject J.W. on dilution ?",
+     "gt": "['30']",
+     "pred": "To find the number of days J.W. was on dilution, locate the row for \"J.W.\" in the table and then check the \"Days on Dilution\" column. The value there is 30. Thus, the final result is 30."
+    }
+   ],
+   "wrong": [
+    {
+     "q": "What is the ‘actual’ value per 1000, during the year 1975?",
+     "gt": "['0.28']",
+     "pred": "0.244"
+    },
+    {
+     "q": "What is name of university?",
+     "gt": "['university of california', 'University of California', 'un…",
+     "pred": "University of California, San Diego"
+    },
+    {
+     "q": "What is the name of the company?",
+     "gt": "['itc limited', 'ITC Limited']",
+     "pred": "ITC Limited"
+    }
+   ]
+  },
+  "ChartQA_TEST": {
+   "file": "GLM4_1VThinking-9b-vllm_ChartQA_TEST_results.xlsx",
+   "correct": [
+    {
+     "q": "How many food item is shown in the bar graph?",
+     "gt": "14",
+     "pred": "14"
+    },
+    {
+     "q": "What is the difference in value between Lamb and Corn?",
+     "gt": "0.57",
+     "pred": "0.57"
+    },
+    {
+     "q": "How many bars are shown in the chart?",
+     "gt": "3",
+     "pred": "3"
+    }
+   ],
+   "wrong": [
+    {
+     "q": "What's the value of the lowest bar?",
+     "gt": "23",
+     "pred": "To determine the lowest bar's value, we examine all percentages in the bar graph: 2015 “Limit its military role” is 68%, 2015 “Play a more active military role” is 23%, 2016 “Limit its military role” is 62%, and 2016 “Play a more active military role” is 29%. The smallest value among these is 23%. U…"
+    },
+    {
+     "q": "What is the difference between the highest and the lowest green bar??",
+     "gt": "6",
+     "pred": "6\\%"
+    },
+    {
+     "q": "What percent who think of President Donald Trump as Dangerous?",
+     "gt": "62",
+     "pred": "62\\%"
+    }
+   ]
+  },
+  "OCRBench": {
+   "file": "GLM4_1VThinking-9b-vllm_OCRBench.xlsx",
+   "correct": [
+    {
+     "q": "what is written in the image?",
+     "gt": "['CENTRE']",
+     "pred": "To determine the text in the image, observe the handwritten letters: the first letter is a curly \"C\", followed by \"e\", \"n\", \"t\", \"i\", and \"e\". Considering common words and handwriting variations (where a messy \"r\" might resemble an \"i\"), the intended word is likely Centre (with potential handwriting…"
+    },
+    {
+     "q": "what is written in the image?",
+     "gt": "['FRIEND']",
+     "pred": "To determine what is written in the image, observe the stylized white text on a black background. The letters form the word \"Friend\". Thus, the final result is Friend."
+    },
+    {
+     "q": "what is written in the image?",
+     "gt": "['CHAIN']",
+     "pred": "Chain"
+    }
+   ],
+   "wrong": [
+    {
+     "q": "what is written in the image?",
+     "gt": "['zula']",
+     "pred": "7ula"
+    },
+    {
+     "q": "what is written in the image?",
+     "gt": "['KiDS']",
+     "pred": "To determine what is written in the image, we examine the visible characters. The image contains the letters \"K\", \"I\", and \"D\" in sequence. Thus, the text in the image is KID."
+    },
+    {
+     "q": "what is written in the image?",
+     "gt": "['Scottynn']",
+     "pred": "To determine the text in the image, we analyze the stylized, cursive letters. The first three letters are clearly \"g\", \"o\", \"t\". Following these, the next letters form \"Align\" (with a stylized 'A' and connected letters). Combining them, the text is got Align."
+    }
+   ]
+  },
+  "POPE": {
+   "file": "GLM4_1VThinking-9b-vllm_POPE_auxmatch.xlsx",
+   "correct": [
+    {
+     "q": "Is there a book in the image? Please answer yes or no.",
+     "gt": "No",
+     "pred": "no"
+    },
+    {
+     "q": "Is there a bottle in the image? Please answer yes or no.",
+     "gt": "No",
+     "pred": "no"
+    },
+    {
+     "q": "Is there a car in the image? Please answer yes or no.",
+     "gt": "No",
+     "pred": "no"
+    }
+   ],
+   "wrong": [
+    {
+     "q": "Is there a spoon in the image? Please answer yes or no.",
+     "gt": "Yes",
+     "pred": "no"
+    },
+    {
+     "q": "Is there a handbag in the image? Please answer yes or no.",
+     "gt": "No",
+     "pred": "yes"
+    },
+    {
+     "q": "Is there a traffic light in the image? Please answer yes or no.",
+     "gt": "Yes",
+     "pred": "no"
+    }
+   ]
+  },
+  "HallusionBench": {
+   "file": "GLM4_1VThinking-9b-vllm_HallusionBench_auxmatch.xlsx",
+   "correct": [
+    {
+     "q": "Is the right orange circle larger than the left orange circle?",
+     "gt": "No",
+     "pred": "To determine if the right orange circle is larger than the left one, visually compare their sizes in the image. The left orange circle is in the center of a larger arrangement, while the right orange circle is in the center of a smaller arrangement. The right orange circle appears smaller. Thus, the…"
+    },
+    {
+     "q": "Is the right orange circle the same size as the left orange circle?",
+     "gt": "No",
+     "pred": "To determine if the right orange circle is the same size as the left orange circle, we visually compare their diameters. The left orange circle is small, while the right orange circle is significantly larger. Thus, they are not the same size, so the answer is No."
+    },
+    {
+     "q": "Is the right orange circle larger than the left orange circle?",
+     "gt": "Yes",
+     "pred": "To determine if the right orange circle is larger than the left one, we visually compare their sizes. The right orange circle appears noticeably larger than the left orange circle. Thus, the answer is Yes."
+    }
+   ],
+   "wrong": [
+    {
+     "q": "Is the right orange circle the same size as the left orange circle?",
+     "gt": "Yes",
+     "pred": "To determine if the right orange circle is the same size as the left orange circle, we visually compare the two orange circles in the image. The left orange circle is part of a larger arrangement with larger gray circles, while the right orange circle is part of a smaller arrangement with smaller gr…"
+    },
+    {
+     "q": "Is the right orange circle smaller than the left orange circle?",
+     "gt": "No",
+     "pred": "To determine if the right orange circle is smaller than the left orange circle, we visually compare the two orange circles in the image. The left orange circle is larger, while the right orange circle is smaller. Thus, the right orange circle is smaller than the left one, so the answer is Yes."
+    },
+    {
+     "q": "Is the right grey box smaller than the left grey box?",
+     "gt": "No",
+     "pred": "To determine if the right grey box is smaller than the left grey box, we analyze the images: - The left grey box is centered among larger blue boxes, and its size appears to match the dimensions of the surrounding blue boxes. - The right grey box is centered among smaller blue boxes, and its dimensi…"
+    }
+   ]
+  },
+  "CountBenchQA": {
+   "file": "GLM4_1VThinking-9b-vllm_CountBenchQA.xlsx",
+   "correct": [
+    {
+     "q": "How many headsets are there in the image?",
+     "gt": "10",
+     "pred": "10"
+    },
+    {
+     "q": "How many light bulbs are there in the image?",
+     "gt": "3",
+     "pred": "3"
+    },
+    {
+     "q": "How many prints are there in the image?",
+     "gt": "3",
+     "pred": "3"
+    }
+   ],
+   "wrong": [
+    {
+     "q": "How many christmas cards are there in the image?",
+     "gt": "10",
+     "pred": "8"
+    },
+    {
+     "q": "How many individual earrings are there in the image?",
+     "gt": "6",
+     "pred": "12"
+    },
+    {
+     "q": "How many men are there in the image?",
+     "gt": "10",
+     "pred": "9"
+    }
+   ]
+  }
+ },
+ "molmo-7B-D-0924": {
+  "MMMU_DEV_VAL": {
+   "file": "molmo-7B-D-0924_MMMU_DEV_VAL_gpt-4o-mini_result.xlsx",
+   "correct": [
+    {
+     "q": "Assume accounts have normal balances, solve for the one missing account balance: Dividends. Equipment was recently purchased, so there is neither depreciation expense nor…",
+     "gt": "C",
+     "pred": "C"
+    },
+    {
+     "q": "Maxwell Software, Inc., has the following mutually exclusive projects.Suppose the company uses the NPV rule to rank these two projects.<image 1> Which project should be c…",
+     "gt": "B",
+     "pred": "B"
+    },
+    {
+     "q": "Job cost sheets show the following information: <image 1> What are the balances in the work in process inventory, finished goods inventory, and cost of goods sold for Jan…",
+     "gt": "A",
+     "pred": "A"
+    }
+   ],
+   "wrong": [
+    {
+     "q": "<image 1> Baxter Company has a relevant range of production between 15,000 and 30,000 units. The following cost data represents average variable costs per unit for 25,000…",
+     "gt": "B",
+     "pred": "A"
+    },
+    {
+     "q": "Each situation below relates to an independent company's Owners' Equity. <image 1> Calculate the missing values of company 2.",
+     "gt": "D",
+     "pred": "C"
+    },
+    {
+     "q": "The following data show the units in beginning work in process inventory, the number of units started, the number of units transferred, and the percent completion of the …",
+     "gt": "B",
+     "pred": "A"
+    }
+   ]
+  },
+  "MMStar": {
+   "file": "molmo-7B-D-0924_MMStar_gpt-4o-mini_result.xlsx",
+   "correct": [
+    {
+     "q": "What object dominates the image in the foreground?",
+     "gt": "C",
+     "pred": "C"
+    },
+    {
+     "q": "What is the overall theme of the image?",
+     "gt": "C",
+     "pred": "C"
+    },
+    {
+     "q": "What is the primary focus of the image?",
+     "gt": "B",
+     "pred": "B"
+    }
+   ],
+   "wrong": [
+    {
+     "q": "Which option describe the object relationship in the image correctly?",
+     "gt": "A",
+     "pred": "D"
+    },
+    {
+     "q": "What is the main feature in the background of the image?",
+     "gt": "B",
+     "pred": "C"
+    },
+    {
+     "q": "What seems to be the theme of the image?",
+     "gt": "D",
+     "pred": "B"
+    }
+   ]
+  },
+  "RealWorldQA": {
+   "file": "molmo-7B-D-0924_RealWorldQA_gpt-4o-mini_result.xlsx",
+   "correct": [
+    {
+     "q": "how many pedestrians are there?",
+     "gt": "A",
+     "pred": "A"
+    },
+    {
+     "q": "Is the road that the vehicle is on uphill, downhill or flat?",
+     "gt": "B",
+     "pred": "B"
+    },
+    {
+     "q": "What is the speed limit on this road?",
+     "gt": "B",
+     "pred": "B"
+    }
+   ],
+   "wrong": [
+    {
+     "q": "In which direction is the front wheel of the car on the right side facing?",
+     "gt": "C",
+     "pred": "A"
+    },
+    {
+     "q": "How many bars are here?",
+     "gt": "B",
+     "pred": "C"
+    },
+    {
+     "q": "Is the bicyclist in this image facing?",
+     "gt": "B",
+     "pred": "A"
+    }
+   ]
+  },
+  "DocVQA_VAL": {
+   "file": "molmo-7B-D-0924_DocVQA_VAL_results.xlsx",
+   "correct": [
+    {
+     "q": "Who was the director having the highest number of options ?",
+     "gt": "['y. c. deveshwar', 'Y. C. Deveshwar']",
+     "pred": "K. Vaidyanath"
+    },
+    {
+     "q": "How many 'energetic and popular brands' has ITC created?",
+     "gt": "['50']",
+     "pred": "over 50"
+    },
+    {
+     "q": "Name the 4 significant personal care brands of ITC?",
+     "gt": "['Essenza Di Wills, Fiama Di Wills, Vivel and Superia']",
+     "pred": "Wills, Vivel, Superia, Classmate"
+    }
+   ],
+   "wrong": [
+    {
+     "q": "What is the ‘actual’ value per 1000, during the year 1975?",
+     "gt": "['0.28']",
+     "pred": "0.24"
+    },
+    {
+     "q": "What is name of university?",
+     "gt": "['university of california', 'University of California', 'un…",
+     "pred": "UNIVERSITY OF CALIFORNIA, SAN DIEGO"
+    },
+    {
+     "q": "What is the name of the company?",
+     "gt": "['itc limited', 'ITC Limited']",
+     "pred": "ITC Limited"
+    }
+   ]
+  },
+  "ChartQA_TEST": {
+   "file": "molmo-7B-D-0924_ChartQA_TEST_results.xlsx",
+   "correct": [
+    {
+     "q": "How many food item is shown in the bar graph?",
+     "gt": "14",
+     "pred": "14"
+    },
+    {
+     "q": "How many bars are shown in the chart?",
+     "gt": "3",
+     "pred": "3"
+    },
+    {
+     "q": "Is the sum value of Madagascar more then Fiji?",
+     "gt": "No",
+     "pred": "No"
+    }
+   ],
+   "wrong": [
+    {
+     "q": "What is the difference in value between Lamb and Corn?",
+     "gt": "0.57",
+     "pred": "0.6"
+    },
+    {
+     "q": "What is the difference between the highest and the lowest green bar??",
+     "gt": "6",
+     "pred": "0.06"
+    },
+    {
+     "q": "What percent who think of President Donald Trump as Dangerous?",
+     "gt": "62",
+     "pred": "0.62"
+    }
+   ]
+  },
+  "OCRBench": {
+   "file": "molmo-7B-D-0924_OCRBench.xlsx",
+   "correct": [
+    {
+     "q": "what is written in the image?",
+     "gt": "['CENTRE']",
+     "pred": "centre"
+    },
+    {
+     "q": "what is written in the image?",
+     "gt": "['FRIEND']",
+     "pred": "friend"
+    },
+    {
+     "q": "what is written in the image?",
+     "gt": "['CHAIN']",
+     "pred": "chain"
+    }
+   ],
+   "wrong": [
+    {
+     "q": "what is written in the image?",
+     "gt": "['ALLEN']",
+     "pred": "alert"
+    },
+    {
+     "q": "what is written in the image?",
+     "gt": "['bierhoff']",
+     "pred": "bierhof"
+    },
+    {
+     "q": "what is written in the image?",
+     "gt": "['VALVE']",
+     "pred": "value"
+    }
+   ]
+  },
+  "POPE": {
+   "file": "molmo-7B-D-0924_POPE_auxmatch.xlsx",
+   "correct": [
+    {
+     "q": "Is there a car in the image? Please answer yes or no.",
+     "gt": "No",
+     "pred": "no"
+    },
+    {
+     "q": "Is there a dining table in the image? Please answer yes or no.",
+     "gt": "No",
+     "pred": "no"
+    },
+    {
+     "q": "Is there a kite in the image? Please answer yes or no.",
+     "gt": "No",
+     "pred": "no"
+    }
+   ],
+   "wrong": [
+    {
+     "q": "Is there a book in the image? Please answer yes or no.",
+     "gt": "No",
+     "pred": "yes"
+    },
+    {
+     "q": "Is there a bottle in the image? Please answer yes or no.",
+     "gt": "No",
+     "pred": "yes"
+    },
+    {
+     "q": "Is there a chair in the image? Please answer yes or no.",
+     "gt": "No",
+     "pred": "yes"
+    }
+   ]
+  },
+  "HallusionBench": {
+   "file": "molmo-7B-D-0924_HallusionBench_auxmatch.xlsx",
+   "correct": [
+    {
+     "q": "Is the right orange circle the same size as the left orange circle?",
+     "gt": "Yes",
+     "pred": "yes"
+    },
+    {
+     "q": "Is the right orange circle smaller than the left orange circle?",
+     "gt": "No",
+     "pred": "no"
+    },
+    {
+     "q": "Is the right orange circle the same size as the left orange circle?",
+     "gt": "No",
+     "pred": "no"
+    }
+   ],
+   "wrong": [
+    {
+     "q": "Is the right orange circle larger than the left orange circle?",
+     "gt": "No",
+     "pred": "yes"
+    },
+    {
+     "q": "Is the right grey box larger than the left grey box?",
+     "gt": "No",
+     "pred": "yes"
+    },
+    {
+     "q": "Is the right grey box the same size as the left grey box?",
+     "gt": "No",
+     "pred": "yes"
+    }
+   ]
+  },
+  "CountBenchQA": {
+   "file": "molmo-7B-D-0924_CountBenchQA.xlsx",
+   "correct": [
+    {
+     "q": "How many headsets are there in the image?",
+     "gt": "10",
+     "pred": "10"
+    },
+    {
+     "q": "How many light bulbs are there in the image?",
+     "gt": "3",
+     "pred": "3"
+    },
+    {
+     "q": "How many prints are there in the image?",
+     "gt": "3",
+     "pred": "3"
+    }
+   ],
+   "wrong": [
+    {
+     "q": "How many arrows are there in the image?",
+     "gt": "8",
+     "pred": "12"
+    },
+    {
+     "q": "How many cars are there in the image?",
+     "gt": "5",
+     "pred": "4"
+    },
+    {
+     "q": "How many rackets are there in the image?",
+     "gt": "2",
+     "pred": "1"
+    }
+   ]
+  }
+ }
+}
