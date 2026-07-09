@@ -45,6 +45,28 @@ benchmarks/vlm-baseline）直接相关——学术界结论与我们一致：**�
   PPE/hygiene 目标检测数据集（31k 图，YOLO 系）；planogram compliance（货架陈列 CV）。
   方法线：WinCLIP、AnomalyGPT（AAAI'24）、FADE 等 zero-shot AD。
 
+### 2026-07-09（补充：真实图像理解场景线）
+- **MME-RealWorld**（ICLR 2025）— 最大人工标注高分辨率真实场景 benchmark：
+  13,366 张图（均 2000×1500）、29,429 QA、43 子任务、5 域，**内含"视频监控
+  (Monitoring)"子域**；28 个 SOTA MLLM（GPT-4o/Gemini/Claude）**无一达 60%** ·
+  [arXiv 2408.13257](https://arxiv.org/abs/2408.13257) ·
+  [code](https://github.com/MME-Benchmarks/MME-RealWorld) · 未 /paper
+  ⭐ 与我们巡检最直接的公共对标（监控域+高分辨率+人都觉得难）。
+- **V\*Bench / SEAL**（CVPR 2024）— 高清拥挤场景找小物体（191 图，均 2246×1582）；
+  提出 LLM 引导的视觉搜索机制（先搜索定位再回答）·
+  [arXiv 2312.14135](https://arxiv.org/abs/2312.14135) · 未 /paper
+  ⭐ "先找后判"机制可作巡检 v1 的方法对照组。
+- **Zoom-Bench**（2026）— 845 题，专测"决定性视觉证据极小、被全局上下文淹没"
+  的细粒度感知——正是我们垃圾桶/客区漏报的学术形态 ·
+  [via VisualNeedle 引用](https://arxiv.org/pdf/2605.26380) · 未 /paper
+- **VisualNeedle**（2026-05）— 信息密集场景的主动视觉搜索 benchmark ·
+  [arXiv 2605.26380](https://arxiv.org/pdf/2605.26380) · 未 /paper
+- **HRScene** — 25 个真实数据集统一的高分辨率理解评测（1K~35K 分辨率），
+  VLM 均分仅 49.7% · [arXiv 2504.18406](https://arxiv.org/html/2504.18406) · 未 /paper
+- **HR-Bench**（4K/8K）— 超高分辨率单实例/跨实例细粒度感知；
+  **CVSearch**（2026-05）认知视觉搜索 · [arXiv 2605.23655](https://arxiv.org/pdf/2605.23655)
+- 相关经典：RealWorldQA（已在我们矩阵）、MMVP（CLIP-blind 细粒度视觉缺陷）、BLINK（低层感知）。
+
 ## 当前判断
 - **空位明确**：工业质检（MMAD，近拍单物体）和视频监控（FoodMonitor/SurveillanceVQA，
   时序+定位）两头都有了，但"**远距监控单帧、多目标、开放场景的巡检判断**"
@@ -54,3 +76,8 @@ benchmarks/vlm-baseline）直接相关——学术界结论与我们一致：**�
   空间定位与细粒度异常发现是共同瓶颈——与我们测得的"系统性漏报"互证。
 - 值得深读：MMAD（题型设计/判分协议可借鉴出题）、FoodMonitor（规则驱动+
   双通道标注结构可借鉴 v1 升级）。
+- **真实图像理解线的定位**：我们巡检测出的"系统性漏报"，在学术上对应
+  "高分辨率小目标细粒度感知/视觉搜索"缺陷（MME-RealWorld 监控域无一过 60%、
+  HRScene 均分 49.7%、V*/Zoom-Bench 专攻此点）——证据链完整。两个可执行动作：
+  ① 把 MME-RealWorld(-Lite) 加进评测矩阵做公共对照（VLMEvalKit 原生支持）；
+  ② 巡检 v1 增加 V*/SEAL 式"先搜索后回答"方法对照组，验证 zoom-in 能挽回多少召回。
