@@ -28,5 +28,9 @@ topics:
 
   - slug: inspection-anomaly-benchmark
     name: 巡检/异常检测的 VLM Benchmark
-    keywords: [industrial anomaly detection benchmark, MLLM anomaly detection, surveillance video anomaly, compliance analysis benchmark, inspection VLM]
+    keywords: [industrial anomaly detection benchmark, MLLM anomaly detection, surveillance video anomaly, compliance analysis benchmark, inspection VLM, Zoom-Bench, Zooming without Zooming, MME-RealWorld, RealWorldQA, fine-grained perception]
     cadence: weekly
+    watch:   # 重点追踪对象（2026-07-09 设立）
+      - Zoom-Bench / ZwZ（inclusionAI/Zooming-without-Zooming, arXiv 2602.11858）
+      - MME-RealWorld（MME-Benchmarks/MME-RealWorld, arXiv 2408.13257）
+      - RealWorldQA（xai-org/RealworldQA）

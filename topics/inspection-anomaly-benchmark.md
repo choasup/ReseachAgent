@@ -17,8 +17,27 @@ benchmarks/vlm-baseline）直接相关——学术界结论与我们一致：**�
 ## 里程碑 / 必读论文
 - [ ] **MMAD**（ICLR 2025）— 工业 IAD 的 MLLM benchmark 事实标准
 - [ ] **FoodMonitor**（2026-05）— 商用厨房监控合规，与我们业务场景几乎对口
+- [ ] **ZwZ / Zoom-Bench**（ICML 2026）— 巡检漏报问题的解法蓝本（重点追踪）
+- [ ] **MME-RealWorld**（ICLR 2025）— 高分辨率真实场景（含监控域）标杆（重点追踪）
+- [ ] **RealWorldQA**（xAI）— 已在我们评测矩阵，持续对比（重点追踪）
 
 ## 追踪记录
+
+### 2026-07-09（设立三个重点追踪对象，补充动态）
+- **ZwZ / Zoom-Bench 详情**（上海交大 + 蚂蚁，ICML 2026）— Region-to-Image 蒸馏：
+  把"agentic zooming"从推理时工具内化为训练原语（单次前向），RL(DAPO) + 仅 74K
+  合成数据；**基座正是 Qwen3-VL-4B/8B、Qwen2.5-VL-7B**（我们矩阵同款），开源模型
+  细粒度感知 SOTA · [arXiv 2602.11858](https://arxiv.org/abs/2602.11858) ·
+  [code](https://github.com/inclusionAI/Zooming-without-Zooming) · 未 /paper
+  ⭐⭐ 我们巡检"漏报"的直接解法蓝本：ZwZ-8B 可作巡检微调起点或直接拿来测。
+- **MME-RealWorld 生态**：有 **Lite 版**（每任务 50 样本，VLMEvalKit / lmms-eval
+  原生支持——可低成本加入我们矩阵）与 **CN 中文版**（5,917 中文场景 QA，更贴
+  我们业务）；同系 Video-MME（CVPR 2025）·
+  [HF Lite](https://huggingface.co/datasets/yifanzhang114/MME-RealWorld-Lite) ·
+  [GitHub](https://github.com/MME-Benchmarks/MME-RealWorld)
+- **RealWorldQA 动态**：榜单当前由 Qwen3.6 Plus 领先（0.854）；数据集 CC BY-ND ·
+  [HF](https://huggingface.co/datasets/xai-org/RealworldQA) ·
+  [解读](https://huggingface.co/blog/KennyUTC/realworldqa)
 
 ### 2026-07-09（首次梳理，按与我们场景的相关度排序）
 - **FoodMonitor: Benchmarking MLLMs for Explainable Compliance Analysis** —
