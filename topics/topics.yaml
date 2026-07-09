@@ -25,3 +25,8 @@ topics:
     name: VLM / 多模态大模型
     keywords: [vision-language model, multimodal LLM, VLM efficiency, visual reasoning, VLM RAG, training-free]
     cadence: weekly
+
+  - slug: inspection-anomaly-benchmark
+    name: 巡检/异常检测的 VLM Benchmark
+    keywords: [industrial anomaly detection benchmark, MLLM anomaly detection, surveillance video anomaly, compliance analysis benchmark, inspection VLM]
+    cadence: weekly
