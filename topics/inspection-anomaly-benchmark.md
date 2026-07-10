@@ -28,7 +28,7 @@ benchmarks/vlm-baseline）直接相关——学术界结论与我们一致：**�
   把"agentic zooming"从推理时工具内化为训练原语（单次前向），RL(DAPO) + 仅 74K
   合成数据；**基座正是 Qwen3-VL-4B/8B、Qwen2.5-VL-7B**（我们矩阵同款），开源模型
   细粒度感知 SOTA · [arXiv 2602.11858](https://arxiv.org/abs/2602.11858) ·
-  [code](https://github.com/inclusionAI/Zooming-without-Zooming) · 未 /paper
+  [code](https://github.com/inclusionAI/Zooming-without-Zooming) · **已 /paper**（papers/2026/2026-07-10-zwz-region-to-image-distillation.md）
   ⭐⭐ 我们巡检"漏报"的直接解法蓝本：ZwZ-8B 可作巡检微调起点或直接拿来测。
 - **MME-RealWorld 生态**：有 **Lite 版**（每任务 50 样本，VLMEvalKit / lmms-eval
   原生支持——可低成本加入我们矩阵）与 **CN 中文版**（5,917 中文场景 QA，更贴

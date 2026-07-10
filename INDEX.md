@@ -3,10 +3,10 @@
 > 本文件是整个知识库的总目录，**每次新增/修改论文解读后同步更新**。
 > 按主题分组；每行格式：`论文标题 · 一句话结论 · [笔记](路径) · tags`。
 
-_最后更新：2026-07-08_
+_最后更新：2026-07-10_
 
 ## 统计
-- 已归档论文：6
+- 已归档论文：7
 - 追踪主题：2（vlm + agents）
 
 ## 按主题
@@ -15,6 +15,7 @@ _最后更新：2026-07-08_
 - **VisCritic** (投稿 ECCV'26) · 动作前后截图差分当步级奖励：Siamese ViT + 零人工标注 + 推理期即插即用 · [笔记](papers/2026/2026-07-08-viscritic-visual-process-reward.md) · `GUI-agent` `process-reward` `plug-and-play`
 
 ### VLM 前沿方法
+- **ZwZ / Zooming without Zooming** (ICML 2026, SJTU+蚂蚁) · 把 zoom 变训练原语：微裁剪出题蒸回全图 + DAPO，74K 数据单次前向拿细粒度感知（ZoomBench +20、比工具法快10×）——我们实测巡检召回翻倍 · [笔记](papers/2026/2026-07-10-zwz-region-to-image-distillation.md) · `fine-grained` `distillation` `RL` `zoom`
 - **HPP** · 长视频理解改写成"LLM 写代码逐步探查视频"，感知与推理解耦，LongVideoBench 等大幅提升 · [笔记](papers/2026/2026-07-08-hpp-programmatic-video-probing.md) · `long-video` `training-free` `code-as-tool`
 - **World2VLM** · 世界模型合成未来视角当训练监督，把"想象力"蒸馏进 VLM——推理期零额外开销反超 test-time 方法 · [笔记](papers/2026/2026-07-08-world2vlm-imagination-distillation.md) · `world-model` `distillation` `spatial`
 
