@@ -20,11 +20,20 @@ topics:
     name: LLM / 多模态 Agent
     keywords: [LLM agent, multimodal agent, GUI agent, computer use, tool use, multi-agent, planning, agentic]
     cadence: weekly
+    watch:   # 方法线（2026-07-11 设立）
+      - 过程奖励 for GUI agent（VisCritic/GUI-Shepherd/StainFlow 一线，半年5篇未定论，盯统一者）
+      - MolmoPoint 后续（grounding tokens → GUI grounding 基建）
+      - R-WoM 一线（RAG×世界模型 for computer-use）
 
   - slug: vlm
     name: VLM / 多模态大模型
     keywords: [vision-language model, multimodal LLM, VLM efficiency, visual reasoning, VLM RAG, training-free]
     cadence: weekly
+    watch:   # 方法线（2026-07-11 设立）
+      - "推理伤感知"修复线（Deeper Thought/AV-Reasoner/NoRD/Thinking Diffusion 四证据链，盯后续修复方案）
+      - 解耦感知与推理·长视频（HPP/MemDreamer/VideoARM 同期共识，盯集大成者）
+      - 监督信号工程范式（World2VLM/ReasonX/ZwZ："用生成器造监督"的新实例）
+      - 深读候选存货：TTRV、Why RL>SFT、PDCR、CodeDance（见 topics/vlm.md 80篇详析）
 
   - slug: inspection-anomaly-benchmark
     name: 巡检/异常检测的 VLM Benchmark
