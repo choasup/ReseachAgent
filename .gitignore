@@ -1,0 +1,6 @@
+# 企业微信机器人凭证与运行时文件(不入库)
+.wecom.env
+.wecom/
+
+__pycache__/
+*.pyc
