@@ -3,7 +3,7 @@ topic: "VLM / 多模态大模型"
 slug: "vlm"
 keywords: [vision-language model, multimodal LLM, VLM efficiency, visual reasoning, VLM RAG, training-free]
 created: "2026-07-06"
-last_tracked: "2026-07-08"
+last_tracked: "2026-07-20"
 ---
 
 # 主题追踪：VLM / 多模态大模型
@@ -14,6 +14,27 @@ VLM/MLLM 正在成为视觉研究的"底座"。CVPR 2026 全量分析显示其�
 **VLM × 推理/RL**（全场增速第一的方向，1.8%→8.7%）。
 
 ## 追踪记录
+
+### 2026-07-20 · 两周增量（WebSearch，abstract 级未深读）
+> watch 检查：ZwZ 后续暂无新节点；开源模型无新版本发布。以下按 watch 方法线归位。
+
+**⭐ 命中 watch 方法线**
+- **Attend to Evidence** — 证据锚定的空间注意力监督做 multimodal RLVR ·（**推理伤感知修复线** + Saliency-R1 同思路：对齐注意而非只对齐答案）· [arXiv 2605.30912](https://arxiv.org/pdf/2605.30912)
+- **Attend, Transform, or Silence** — 算子级视觉跳过（逐 operator 决定视觉 token 是否参与计算）做高效 MLLM 推理 ·（效率线，小而美）· [arXiv 2606.31903](https://arxiv.org/pdf/2606.31903)
+- **ToolGate** — 工具增强 VLM agent 的 token 高效"调用前门控" ·（agent×效率交叉，路由思想的微缩版）· [arXiv 2606.03054](https://arxiv.org/pdf/2606.03054)
+
+**潜视觉推理线（Monet 后续演化）**
+- **DeepLatent** — 并行潜视觉推理做 "think with images" · [arXiv 2606.00562](https://arxiv.org/pdf/2606.00562)
+- **Chain-of-Visual-Thought (CoVT)** — 连续视觉 token 做思考链 · [arXiv 2511.19418](https://arxiv.org/pdf/2511.19418)
+
+**自进化 / 验证线**
+- **RISE** — 自进化 VLM 的"可靠改进"（防自进化退化）· [arXiv 2605.20914](https://arxiv.org/pdf/2605.20914)
+- **Reflect to Inform** — 信息增益驱动的验证提升多模态推理 · [arXiv 2603.26348](https://arxiv.org/pdf/2603.26348)
+
+**其它**
+- **ConFoThinking** — 聚焦注意力驱动的 VQA 思考 · [arXiv 2603.00165](https://arxiv.org/pdf/2603.00165)
+- **Visual-OPSD**（西交）— 跨模态 on-policy 自蒸馏做统一多模态推理 · 题名可搜（链接待核）
+
 
 ### 2026-07-08 · 近期新论文（WebSearch，abstract 级未深读）
 - **One Token per Multimodal Evidence** — 每条多模态证据压成 1 个 latent memory token，资源受限 QA 的极致压缩 · [arXiv 2606.10572](https://arxiv.org/abs/2606.10572) · ⭐小而美
