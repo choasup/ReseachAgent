@@ -3,13 +3,16 @@
 > 本文件是整个知识库的总目录，**每次新增/修改论文解读后同步更新**。
 > 按主题分组；每行格式：`论文标题 · 一句话结论 · [笔记](路径) · tags`。
 
-_最后更新：2026-07-10_
+_最后更新：2026-07-21_
 
 ## 统计
-- 已归档论文：7
+- 已归档论文：8
 - 追踪主题：2（vlm + agents）
 
 ## 按主题
+
+### Agent / Harness / 自我改进
+- **Harness Engineering for Self-Improvement** (Lilian Weng, Lil'Log 2026-07) · harness 是 RSI 的近期路径：优化谱系 prompt→上下文→workflow→harness代码→优化器代码，全文精读 · [笔记](papers/2026/2026-07-21-lilian-weng-harness-engineering.md) · `harness` `RSI` `survey`
 
 ### Agent / 过程奖励
 - **VisCritic** (投稿 ECCV'26) · 动作前后截图差分当步级奖励：Siamese ViT + 零人工标注 + 推理期即插即用 · [笔记](papers/2026/2026-07-08-viscritic-visual-process-reward.md) · `GUI-agent` `process-reward` `plug-and-play`
@@ -28,6 +31,7 @@ _最后更新：2026-07-10_
 
 ## 按时间线
 <!-- 最近归档的在最上面 -->
+- 2026-07-21 · **Harness Engineering**（Lilian Weng）— harness 综述，全文精读 · [笔记](papers/2026/2026-07-21-lilian-weng-harness-engineering.md)
 - 2026-07-08 · **HPP** — 程序化探查解耦长视频感知与推理 · [笔记](papers/2026/2026-07-08-hpp-programmatic-video-probing.md)
 - 2026-07-08 · **World2VLM** — 世界模型想象力蒸馏进 VLM · [笔记](papers/2026/2026-07-08-world2vlm-imagination-distillation.md)
 - 2026-07-08 · **VisCritic** — 视觉状态对比做 GUI agent 过程奖励 · [笔记](papers/2026/2026-07-08-viscritic-visual-process-reward.md)
