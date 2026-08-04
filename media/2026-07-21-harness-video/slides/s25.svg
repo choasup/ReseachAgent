@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" font-family="PingFang SC, Microsoft YaHei, sans-serif">
+<rect width="1920" height="1080" fill="#0e1116"/>
+<rect x="0" y="1072" width="1776" height="8" fill="#f85149" opacity="0.85"/>
+<text x="110" y="92" fill="#6e7681" font-size="30">11:06 · 冷水③</text>
+<text x="1810" y="92" text-anchor="end" fill="#30363d" font-size="30">25 / 27</text>
+<text x="960" y="420" text-anchor="middle" fill="#f85149" font-size="84" font-weight="800">AI 不会承认失败</text><text x="960" y="560" text-anchor="middle" fill="#c9d1d9" font-size="42" font-weight="500">人类文献只发成功，AI 学不会放弃</text><text x="960" y="650" text-anchor="middle" fill="#c9d1d9" font-size="42" font-weight="500">好 harness 要让失败易于保存</text>
+<text x="960" y="1030" text-anchor="middle" fill="#30363d" font-size="24">Harness Engineering · 基于 Lilian Weng 2026-07</text>
+</svg>

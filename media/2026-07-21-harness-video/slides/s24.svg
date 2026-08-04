@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" font-family="PingFang SC, Microsoft YaHei, sans-serif">
+<rect width="1920" height="1080" fill="#0e1116"/>
+<rect x="0" y="1072" width="1712" height="8" fill="#f85149" opacity="0.85"/>
+<text x="110" y="92" fill="#6e7681" font-size="30">10:42 · 冷水②</text>
+<text x="1810" y="92" text-anchor="end" fill="#30363d" font-size="30">24 / 27</text>
+<text x="960" y="420" text-anchor="middle" fill="#f85149" font-size="84" font-weight="800">作弊是天性</text><text x="960" y="560" text-anchor="middle" fill="#c9d1d9" font-size="42" font-weight="500">给什么信号就优化什么信号</text><text x="960" y="650" text-anchor="middle" fill="#c9d1d9" font-size="42" font-weight="500">评估器必须放在进化循环之外</text>
+<text x="960" y="1030" text-anchor="middle" fill="#30363d" font-size="24">Harness Engineering · 基于 Lilian Weng 2026-07</text>
+</svg>

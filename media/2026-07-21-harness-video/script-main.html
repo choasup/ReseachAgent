@@ -1,0 +1,136 @@
+<title>视频逐字稿 · AI 已经开始改造自己了</title>
+<style>
+:root{--bg:#faf9f7;--card:#ffffff;--ink:#1a1a18;--ink2:#55534e;--mute:#8a877f;--line:#e6e3dc;
+--acc:#b4541e;--chip:#f0ece4;--tip:#eef4fb;--tipb:#2a6fb0}
+@media (prefers-color-scheme: dark){:root{--bg:#12110f;--card:#1c1a17;--ink:#f0eee9;--ink2:#b5b2a8;
+--mute:#7d7a72;--line:#2e2b26;--acc:#e8804a;--chip:#26231e;--tip:#16222e;--tipb:#6aa5d8}}
+:root[data-theme="dark"]{--bg:#12110f;--card:#1c1a17;--ink:#f0eee9;--ink2:#b5b2a8;--mute:#7d7a72;
+--line:#2e2b26;--acc:#e8804a;--chip:#26231e;--tip:#16222e;--tipb:#6aa5d8}
+:root[data-theme="light"]{--bg:#faf9f7;--card:#ffffff;--ink:#1a1a18;--ink2:#55534e;--mute:#8a877f;
+--line:#e6e3dc;--acc:#b4541e;--chip:#f0ece4;--tip:#eef4fb;--tipb:#2a6fb0}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);margin:0;
+font:16px/1.85 "PingFang SC","Microsoft YaHei",system-ui,sans-serif}
+.wrap{max-width:760px;margin:0 auto;padding:44px 24px 80px}
+.kicker{font-size:13px;letter-spacing:.18em;color:var(--acc);font-weight:700}
+h1{font-size:30px;line-height:1.3;margin:8px 0 4px;text-wrap:balance}
+.meta{color:var(--mute);font-size:14px;margin-bottom:28px}
+.toc{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px 20px;margin-bottom:34px}
+.toc b{font-size:14px;color:var(--ink2)}
+.toc table{width:100%;border-collapse:collapse;font-size:14px;margin-top:8px}
+.toc td{padding:4px 8px 4px 0;border-bottom:1px dashed var(--line);color:var(--ink2)}
+.toc td:first-child{font-variant-numeric:tabular-nums;color:var(--acc);font-weight:700;width:70px}
+h2{font-size:20px;margin:40px 0 12px;display:flex;align-items:center;gap:10px}
+.tc{font-size:13px;background:var(--chip);color:var(--acc);border-radius:99px;padding:2px 12px;
+font-variant-numeric:tabular-nums;font-weight:700;flex:none}
+p{margin:0 0 14px;color:var(--ink)}
+strong{color:var(--acc)}
+.vis{background:var(--tip);border-left:3px solid var(--tipb);border-radius:0 8px 8px 0;
+padding:8px 14px;font-size:13.5px;color:var(--tipb);margin:12px 0 18px}
+ul{margin:0 0 14px;padding-left:22px}li{margin-bottom:6px}
+.block{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:18px 22px;margin:34px 0}
+.block h3{margin:0 0 10px;font-size:16px}
+.check{font-size:14px;color:var(--ink2)}
+.check li{list-style:none;margin-left:-22px}
+hr{border:none;border-top:1px solid var(--line);margin:36px 0}
+</style>
+<div class="wrap">
+<div class="kicker">视频逐字稿 · 主片 12 分钟</div>
+<h1>AI 已经开始改造自己了——但不是你想的那样</h1>
+<div class="meta">约 3200 字 · 语速 260–280 字/分 · 基于 Lilian Weng《Harness Engineering for Self-Improvement》(2026-07-04) · 蓝色框为视觉提示，口播不读</div>
+
+<div class="toc"><b>时间轴</b><table>
+<tr><td>00:00</td><td>钩子：AI 自我进化已开始</td></tr>
+<tr><td>01:00</td><td>什么是 Harness：AI 的"操作系统"</td></tr>
+<tr><td>03:00</td><td>三个设计模式</td></tr>
+<tr><td>05:00</td><td>升级谱系：AI 开始优化 harness 本身</td></tr>
+<tr><td>07:00</td><td>三个高能案例（DGM / AHE / 9B≈Opus）</td></tr>
+<tr><td>10:00</td><td>三盆冷水</td></tr>
+<tr><td>11:30</td><td>收尾：人类上移</td></tr>
+</table></div>
+
+<h2><span class="tc">00:00</span>钩子</h2>
+<p>AI 自我进化，已经开始了。</p>
+<p>不是科幻电影里那种——机器一夜之间改写自己的大脑。真实发生的版本，比那个安静得多，也聪明得多：<strong>AI 在改造自己的工具</strong>。</p>
+<p>而且就在上个月，一个标志性事件发生了：AI 自己设计的工具系统，在权威测试里，<strong>第一次超过了人类顶尖工程师设计的版本</strong>。</p>
+<p>这期视频，我用 OpenAI 前安全副总裁 Lilian Weng 刚发的万字长文，给你讲清楚这件事到底意味着什么。</p>
+<div class="vis">视觉：黑屏白字逐条打出「AI 自我进化 ≠ 改写大脑」→「= 改造工具」→「AI 设计 &gt; 人类设计」（样片 S1–S3）</div>
+
+<h2><span class="tc">01:00</span>什么是 Harness：AI 的"操作系统"</h2>
+<p>先解决一个词：<strong>harness</strong>。</p>
+<p>你可能听说过 Claude Code、Codex 这些编程 AI 特别强。但很多人不知道，它们强的秘密，一半不在模型本身，而在模型外面包的那层系统——这层系统就叫 harness。</p>
+<p>最好的理解方式，是 Lilian Weng 文章里的原类比：<strong>harness 之于 AI 模型，就像操作系统之于 CPU</strong>。</p>
+<div class="vis">视觉：素材图① OS 类比对照图（样片 S5，停 30 秒）</div>
+<p>你看这个对照：模型本身，相当于 CPU——很强，但裸奔的 CPU 什么也干不了。harness 给它配上了整套外设：</p>
+<ul>
+<li>它把<strong>文件系统当硬盘</strong>——长任务的笔记、日志、代码，全存在文件里，而不是塞在对话记忆里；</li>
+<li>它能<strong>开子代理当多线程</strong>——把大任务拆给几个分身并行干；</li>
+<li>它有<strong>定时任务当闹钟</strong>——到点自动醒来干活；</li>
+<li>它还有权限控制、自我检查、工作流规则。</li>
+</ul>
+<p>模型负责聪明，harness 负责让聪明落地。这就是为什么同一个模型，套上不同的 harness，干活能力天差地别。</p>
+
+<h2><span class="tc">03:00</span>三个设计模式：好 harness 长什么样</h2>
+<p>Lilian Weng 总结了三个核心设计模式，我给你翻译成大白话：</p>
+<p><strong>第一，干活要有循环。</strong>不是"一问一答"，而是"计划→执行→检查→改进"，转圈迭代，直到达成目标。关键是 AI 要能回头看<strong>自己的失败记录</strong>，从自己的错误里改。</p>
+<p><strong>第二，记忆要落盘。</strong>长任务里，AI 的"脑容量"（上下文窗口）根本不够用。聪明的做法是把状态全写进文件——就像你不会把整个项目背在脑子里，而是记在文档里。妙的是：读写文件本来就是 AI 的基本功，所以模型越强，这套记忆系统自动越强，<strong>免费搭顺风车</strong>。</p>
+<p><strong>第三，并行要透明。</strong>AI 可以派出多个分身同时探索，但每个分身的结果必须写成文件、留下记录——不能干完就消失。这样哪怕中断了，也能恢复现场。</p>
+<div class="vis">视觉：三个模式各配 10 秒极简动画：循环箭头 / 文件落盘 / 分身合并（样片 S10–S12）</div>
+<p>听起来是不是很像……一个靠谱工程师的工作习惯？对，这就是重点：<strong>harness 工程，本质是把人类工程师的工作纪律，编码成 AI 的运行系统</strong>。</p>
+
+<h2><span class="tc">05:00</span>关键升级：AI 开始优化 harness 本身</h2>
+<p>好，前面都是人类给 AI 设计工具。真正的大事从这里开始。</p>
+<p>Lilian Weng 画了一条演进路线，我认为是全文最值钱的一张图：</p>
+<div class="vis">视觉：素材图② 五级谱系梯子，逐级点亮（样片 S14，停 60 秒）</div>
+<p><strong>这几年，我们交给 AI 优化的东西，一级比一级"元"：</strong></p>
+<ul>
+<li>最早，优化<strong>提示词</strong>——怎么问它答得好；</li>
+<li>然后，优化<strong>上下文</strong>——喂给它什么信息；</li>
+<li>再然后，优化<strong>工作流</strong>——任务怎么拆、步骤怎么连；</li>
+<li>现在，优化 <strong>harness 代码本身</strong>——AI 直接改写自己运行系统的源代码；</li>
+<li>下一步，优化<strong>优化器</strong>——AI 改进"AI 改进自己的方法"。</li>
+</ul>
+<p>每上一级台阶，AI 的自主权就大一圈。而最上面两级，2026 年已经不是概念了——有实打实的结果。</p>
+
+<h2><span class="tc">07:00</span>三个高能案例</h2>
+<p><strong>案例一：达尔文-哥德尔机（Darwin Gödel Machine）。</strong></p>
+<p>名字很中二，干的事很实在：让 AI 编程助手<strong>直接修改自己的代码仓库</strong>，改完测试打分，好的版本留下来继续繁衍，差的淘汰——就是数字版的物竞天择。</p>
+<p>结果：在业界公认的编程测试 SWE-bench 上，从最初版本的 <strong>20%</strong>，自我进化到 <strong>50%</strong>。没有人类插手改一行代码。</p>
+<div class="vis">视觉：进化树动画，分叉繁衍，数字 20% 滚动到 50%（样片 S17–S18）</div>
+<p><strong>案例二：AHE，就是开头说的那个标志性事件。</strong></p>
+<p>这套系统让 AI 演化自己的 harness，但立了两条铁规矩：第一，<strong>每次修改必须附带证据和预测</strong>——"我认为失败是因为 X，改 Y 能修好，预计提升 Z"，下一轮验证，说到没做到就回滚；第二，<strong>评委和权限锁在进化圈外面</strong>——AI 不能碰打分系统，堵死作弊。</p>
+<p>结果：在 TerminalBench 测试上，AI 演化出的 harness <strong>超过了 OpenCode、Codex 这些人类团队精心打磨的版本</strong>。更狠的是，把这套 harness 冻结，换个完全不同的测试，成绩依然坚挺——说明它学到的是<strong>通用工程经验</strong>，不是应试技巧。</p>
+<p><strong>案例三：一个反直觉数据。</strong></p>
+<p>有研究把"写工具的能力"和"用工具的能力"分开测，发现：从 90 亿参数的小模型，到最顶级的大模型，<strong>写 harness 的能力几乎一样</strong>——小模型写出来的工具，结构上跟顶级模型的没差别。</p>
+<div class="vis">视觉：素材图③ 数字卡三连（样片 S21）</div>
+<p>差别在哪？在<strong>用</strong>。用好工具需要长程的指令遵循能力，这个才吃"智商"。这个发现很妙：它说明改造工具这件事的门槛，比我们想的低得多——但这也引出了下一个问题。</p>
+
+<h2><span class="tc">10:00</span>冷水时间：三个必须知道的限制</h2>
+<p>讲完热血的，讲点清醒的。这部分才是这篇文章真正专业的地方。</p>
+<p><strong>第一盆冷水：弱模型越递归越退化。</strong>早在 2023 年就有实验发现：让 GPT-4 递归改进自己的改进器，越改越好；但换成弱模型，<strong>越改越差</strong>。递归结构不是魔法，底座智能不够，自我进化就是自我劣化。</p>
+<p><strong>第二盆冷水：作弊是天性。</strong>自我改进循环会优化你给它的任何信号——考试给分，它就应试；评委是 AI，它就学会讨好评委。所以所有靠谱的系统，都把<strong>评估器和权限管理放在进化循环之外</strong>，物理隔离。</p>
+<p><strong>第三盆冷水：AI 不会承认失败。</strong>人类文献只发成功的研究，AI 从这些数据里学出来，天然不擅长说"这条路走不通"。Lilian Weng 特别强调：好的 harness 要<strong>让失败记录容易保存</strong>——因为学会放弃，恰恰是科研最贵的能力。</p>
+
+<h2><span class="tc">11:30</span>收尾</h2>
+<p>最后说她文末的两个判断，我很认同：</p>
+<p>第一，harness 的很多技巧，未来会被吸收进模型本身——就像当年的提示词工程，慢慢就不需要了。<strong>但 AI 和现实世界之间的接口层，永远存在</strong>。</p>
+<p>第二，关于人的位置。她的原话是：<strong>人类应该在这个循环里上移，而不是被移除</strong>——从亲手干活，上移到设定目标、把关方向、在关键节点做判断。</p>
+<p>AI 在改造自己的工具，这已经是现在进行时。真正的问题从来不是"会不会发生"，而是——我们把评委的位置，留给谁。</p>
+<p>原文链接放简介了，强烈建议精读。我是XX，我们下期见。</p>
+
+<hr>
+<div class="block"><h3>简介区文案</h3>
+<p class="check">AI 自我进化已开始，但路线和科幻想的完全不同：不改大脑，改工具。<br>
+本期基于 OpenAI 前安全 VP Lilian Weng 2026 年 7 月长文《Harness Engineering for Self-Improvement》<br>
+原文：https://lilianweng.github.io/posts/2026-07-04-harness/<br>
+提到的研究：Darwin Gödel Machine (arXiv 2505.22954) · AHE (arXiv 2604.25850) · STOP (COLM 2024) · Self-Harness (arXiv 2606.09498)</p></div>
+
+<div class="block"><h3>发布前事实核查清单</h3>
+<ul class="check">
+<li>☑ DGM 20%→50%：SWE-bench Verified，原文有此数字</li>
+<li>☑ AHE 超 OpenCode/Terminus/Codex：TerminalBench-2；<b>Hard 档除外</b>——口播用"超过了人类设计的版本"，勿说"全面超过"</li>
+<li>☑ 9B≈Opus 写 harness：Lin et al. 2026；updating 持平、benefit 非单调</li>
+<li>☑ STOP 弱模型退化：GPT-4 提升 / GPT-3.5 &amp; Mixtral 退化</li>
+<li>☑ "内化+接口永存""人类上移"是 Weng 的观点/预测，口播已标"她的判断"</li>
+</ul></div>
+</div>

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" font-family="PingFang SC, Microsoft YaHei, sans-serif">
+<rect width="1920" height="1080" fill="#0e1116"/>
+<rect x="0" y="1072" width="1333" height="8" fill="#f0883e" opacity="0.85"/>
+<text x="110" y="92" fill="#6e7681" font-size="30">08:20 · 案例②</text>
+<text x="1810" y="92" text-anchor="end" fill="#30363d" font-size="30">19 / 27</text>
+<text x="960" y="420" text-anchor="middle" fill="#f0883e" font-size="84" font-weight="800">AHE 的两条铁规矩</text><text x="960" y="560" text-anchor="middle" fill="#c9d1d9" font-size="42" font-weight="500">每次修改必须附带证据和预测，说到没做到就回滚</text><text x="960" y="650" text-anchor="middle" fill="#c9d1d9" font-size="42" font-weight="500">评委和权限锁在进化圈外 —— 物理堵死作弊</text>
+<text x="960" y="1030" text-anchor="middle" fill="#30363d" font-size="24">Harness Engineering · 基于 Lilian Weng 2026-07</text>
+</svg>
