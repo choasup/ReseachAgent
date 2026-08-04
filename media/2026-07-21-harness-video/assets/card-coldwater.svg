@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080" font-family="PingFang SC, Microsoft YaHei, sans-serif">
+<rect width="1920" height="1080" fill="#0e1116"/>
+<text x="120" y="90" fill="#6e7681" font-size="30">10:00 冷静时间</text>
+<text x="960" y="380" text-anchor="middle" fill="#f85149" font-size="88" font-weight="800">三盆冷水</text>
+<g font-size="44" fill="#e6edf3" font-weight="600"><text x="960" y="540" text-anchor="middle">① 弱模型越递归越退化 —— 底座智能是前提</text><text x="960" y="640" text-anchor="middle">② 作弊是天性 —— 评委必须锁在进化圈外</text><text x="960" y="740" text-anchor="middle">③ AI 不会承认失败 —— 要让失败易于保存</text></g>
+</svg>

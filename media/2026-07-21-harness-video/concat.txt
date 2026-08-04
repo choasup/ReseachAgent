@@ -1,0 +1,15 @@
+file 'assets/card-hook.png'
+duration 60
+file 'assets/asset1-os-analogy.png'
+duration 120
+file 'assets/card-patterns.png'
+duration 120
+file 'assets/asset2-ladder.png'
+duration 120
+file 'assets/asset3-number-cards.png'
+duration 180
+file 'assets/card-coldwater.png'
+duration 90
+file 'assets/card-ending.png'
+duration 30
+file 'assets/card-ending.png'
