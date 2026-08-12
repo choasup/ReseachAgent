@@ -3,7 +3,7 @@ topic: "VLM / 多模态大模型"
 slug: "vlm"
 keywords: [vision-language model, multimodal LLM, VLM efficiency, visual reasoning, VLM RAG, training-free]
 created: "2026-07-06"
-last_tracked: "2026-07-20"
+last_tracked: "2026-08-12"
 ---
 
 # 主题追踪：VLM / 多模态大模型
@@ -14,6 +14,19 @@ VLM/MLLM 正在成为视觉研究的"底座"。CVPR 2026 全量分析显示其�
 **VLM × 推理/RL**（全场增速第一的方向，1.8%→8.7%）。
 
 ## 追踪记录
+
+### 2026-08-12 · 三周增量（**负结果记录**）
+> 本轮以 `2608` 号段扫 VLM 方向，**未发现命中 watch 方法线的重要新工作**——检索到的相关论文
+> 绝大多数仍是 ≤7 月的（HPP 2606.21734、From Seeing to Thinking 2605.20177、EFlow 2607.00867 等）。
+> 8 月的 2608 号段目前只搜到评测类小文（如 [2608.01238](https://arxiv.org/abs/2608.01238) VLM 说服力评测、
+> [2608.01664](https://arxiv.org/abs/2608.01664) ImageCLEF 2026 多模态推理参赛报告），不值得深读。
+> **判断**：一是 8 月新论文搜索引擎收录滞后（本环境 arxiv.org 直连被墙，只能靠搜索），
+> 二是热度确实阶段性转移到了 agent/harness 侧（见 topics/agents.md 同日记录）。
+>
+> **可用的增量情报源（git）**：[zli12321/Vision-Language-Models-Overview](https://github.com/zli12321/Vision-Language-Models-Overview)
+> ——持续更新的 VLM 模型/benchmark/后训练方法清单，据其自述 7-22 至 8-10 新增 29 条
+> （提到 Qwen3.8-Max、DiffusionGemma、Hunyuan3D-Buffalo 1.0 等）。⚠️ 这些型号我**未逐一核实**，
+> 仅作为下轮 /track 的线索池，不作为结论写入知识库。
 
 ### 2026-07-20 · 两周增量（WebSearch，abstract 级未深读）
 > watch 检查：ZwZ 后续暂无新节点；开源模型无新版本发布。以下按 watch 方法线归位。

@@ -21,6 +21,9 @@ topics:
     keywords: [LLM agent, multimodal agent, GUI agent, computer use, tool use, multi-agent, planning, agentic]
     cadence: weekly
     watch:   # 方法线（2026-07-11 设立）
+      - "★ harness 演化集群（2026-08-12 设立）：EvoHarness-RL 2608.05446 纵向训练化 /
+         EvolveNet 2608.04968 横向联邦化 / Self-Harness 2606.09498 / HarnessX 2606.14249 /
+         DemoEvolve 2605.24539 / EvoTrainer 2606.03108 —— 盯两条路线谁先合流"
       - 过程奖励 for GUI agent（VisCritic/GUI-Shepherd/StainFlow 一线，半年5篇未定论，盯统一者）
       - MolmoPoint 后续（grounding tokens → GUI grounding 基建）
       - R-WoM 一线（RAG×世界模型 for computer-use）
