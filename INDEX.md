@@ -3,15 +3,16 @@
 > 本文件是整个知识库的总目录，**每次新增/修改论文解读后同步更新**。
 > 按主题分组；每行格式：`论文标题 · 一句话结论 · [笔记](路径) · tags`。
 
-_最后更新：2026-07-21_
+_最后更新：2026-09-09_
 
 ## 统计
-- 已归档论文：8
+- 已归档论文：9
 - 追踪主题：2（vlm + agents）
 
 ## 按主题
 
 ### Agent / Harness / 自我改进
+- **RSIH / RSI-Harness** (CosmosMind AI Lab, 2026-09) · 把 harness 配置做成可版本化/可分享的 **Genome**（12 组件 + patch 语义），`harness-rsi` 是"造 Genome 的 Genome"——**⚠️ 论文 PDF 与 HF 被网络策略拦截未读到，仓库自述无 benchmark/评测，"改进"尚不可证伪** · [笔记](papers/2026/2026-09-09-rsih-genome-harness.md) · `harness` `RSI` `genome` `论文未读`
 - **Harness Engineering for Self-Improvement** (Lilian Weng, Lil'Log 2026-07) · harness 是 RSI 的近期路径：优化谱系 prompt→上下文→workflow→harness代码→优化器代码，全文精读 · [笔记](papers/2026/2026-07-21-lilian-weng-harness-engineering.md) · `harness` `RSI` `survey`
 
 ### Agent / 过程奖励
@@ -31,6 +32,7 @@ _最后更新：2026-07-21_
 
 ## 按时间线
 <!-- 最近归档的在最上面 -->
+- 2026-09-09 · **RSIH / RSI-Harness**（CosmosMind）— Genome 化的可分享 harness；论文未读到，仅代码库精读 · [笔记](papers/2026/2026-09-09-rsih-genome-harness.md)
 - 2026-07-21 · **Harness Engineering**（Lilian Weng）— harness 综述，全文精读 · [笔记](papers/2026/2026-07-21-lilian-weng-harness-engineering.md)
 - 2026-07-08 · **HPP** — 程序化探查解耦长视频感知与推理 · [笔记](papers/2026/2026-07-08-hpp-programmatic-video-probing.md)
 - 2026-07-08 · **World2VLM** — 世界模型想象力蒸馏进 VLM · [笔记](papers/2026/2026-07-08-world2vlm-imagination-distillation.md)

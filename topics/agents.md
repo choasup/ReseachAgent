@@ -3,7 +3,7 @@ topic: "LLM / 多模态 Agent"
 slug: "agents"
 keywords: [LLM agent, multimodal agent, GUI agent, computer use, tool use, multi-agent, planning, agentic]
 created: "2026-07-08"
-last_tracked: "2026-08-12"
+last_tracked: "2026-09-09"
 ---
 
 # 主题追踪：LLM / 多模态 Agent
@@ -19,6 +19,28 @@ Agent 类论文占比 1.0%→2.8%（30→112 篇），正处早期放量段。
 - [ ] MolmoPoint-GUI + GUISyn（GUI grounding 基建）— 见 Molmo 系列分析
 
 ## 追踪记录
+
+### 2026-09-09 · RSIH / RSI-Harness：harness 演化集群里少见的**能直接跑的开源实现**（代码库一手精读）
+> 触发：用户给了 CosmosMind AI Lab 的三个源（论文 metarsi-v1.pdf / GitHub RSI-Harness / HF）。
+> **论文 PDF 与 HF 两个域被本环境 egress proxy 拦截，未读到；论文标题公网零命中。** 以下只出自公开代码库。
+
+- **RSIH（[CosmosMind-ai/RSI-Harness](https://github.com/CosmosMind-ai/RSI-Harness)）** —— 把 harness 配置做成
+  一等公民产物 **Genome**：12 个字段所有权互斥的组件（instructions/tools/skills/commands/model/runtime/
+  policies/integrations/appearance/settings/keybindings/resources）打成一个自包含目录，可版本化、可 diff、
+  发给别人就能跑。建在 Pi coding agent 上，**不 fork core**；配置是 patch 语义（缺省即继承默认）。
+  · 其中 `harness-rsi`（命令 `gee`）是**"造 Genome 的 Genome"**：读 RSIH/Pi/Claude Code 的真实 session 历史，
+  先聚合（工具直方图、高频命令、反复出现的纠正）再选择性读原文，判定哪条该变 skill / tool / MCP / memory，
+  **讲完整方案等用户确认后才落盘**。`src/` 里没有一行为它特设的代码——自指性是它的主要论据。
+  · **落在 Weng 谱系的"优化 harness 代码"一级，但去掉自动搜索、换成人确认**——可看作 Meta-Harness(2603.28052)
+  的低风险工程版。
+  · ⚠️ **仓库自述"不包含 benchmark、数据生成、训练或评测实现"** → 没有 accept gate、没有 held-out 曲线，
+  按 STOP / AHE / Self-Harness 的教训，"改进"目前无法证伪。同 org 另两个 repo（SWE-Prometheus 22 题、
+  SWE-PolyVision 48 题）只放公开题面，验证补丁与结果全部不公开 → 若论文主实验建在其上，外部无法核分。
+  · [笔记](../papers/2026/2026-09-09-rsih-genome-harness.md)
+- **顺带捞到的邻近工作（未读，待验证）**：[HarnessBank 2607.13683](https://arxiv.org/abs/2607.13683)
+  （semantic gene-bank search + gated verification for agent-harness self-evolution）——"基因库 + 门控验证"
+  与 Genome 的隐喻高度撞车，但**它有 verification gate 而 RSIH 没有**，是最直接的对照组，优先深读。
+  [Meta^n 2608.24735](https://arxiv.org/abs/2608.24735)（元操作固定、只递归扩张输入）同样待验。
 
 ### 2026-08-12 · ⭐ Harness 演化已成独立子赛道（WebSearch，abstract 级未深读）
 > 触发：7-21 归档 Lilian Weng《Harness Engineering》后首次回扫。结论：这不再是"一篇综述 + 几个案例"，
